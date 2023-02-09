@@ -1,6 +1,6 @@
 # Introduction to Modern Web Application Development
 
-In this part, we will familiarize ourselves with the practicalities of taking the course. 
+In this part, we have a first glance with the course. 
 After that, we will have an overview of the basics of web development and also talk about the advances in web application development during the last few decades.
 
 Before we start programming, we will go through some principles of web development by examining an example application at https://studies.cs.helsinki.fi/exampleapp.
