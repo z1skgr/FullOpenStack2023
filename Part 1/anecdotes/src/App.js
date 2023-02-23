@@ -16,6 +16,8 @@ const Expression = (props) => {
 }
 
 
+
+
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -30,20 +32,50 @@ const App = () => {
    
   const [selected, setSelected] = useState(0) 
   const [voted, setVoted] = useState(Array(anecdotes.length).fill(0)) 
+  const [winner, setWinner] = useState(0)
+  const [showButton, setShowButton] = useState(true);
+
+  const toggleButton = () => {
+    setShowButton(!showButton);
+  };
    
   
   const NewAnecdote = () => {
     setSelected([Math.floor(Math.random() * (anecdotes.length))])
   }
 
+
+
+
   const NewVote = () => {
 
     const vv=[...voted]
     vv[selected]+=1
-    setVoted(vv)
+    setVoted(vv)  
     
+    const mm=vv.indexOf(Math.max.apply(Math, vv))
+    setWinner(mm)
   }
 
+  const reset = () => {
+    setWinner(0)
+    toggleButton()
+    setVoted(Array(anecdotes.length).fill(0)) 
+    setSelected(0)
+  }
+
+
+
+
+
+
+  if(showButton) {
+    return (
+      <div>
+        {showButton && <button onClick={toggleButton}>Generate Anecdote</button>}
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -52,10 +84,20 @@ const App = () => {
       <Button onClick={NewVote} text='Vote' />
         <Button onClick={NewAnecdote} text='Next anecdote' />
       </div>
+      <div>
+      <Expression text={anecdotes[winner]} votes={voted[winner]}  />
+      </div>
+      <div>
+      {!showButton && <Button onClick={reset} text="Back"/>}
+      </div>
+
+      
       
       
     </div>
   )
+
+
 }
 
 export default App
