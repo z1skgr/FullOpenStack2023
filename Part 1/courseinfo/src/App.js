@@ -1,6 +1,6 @@
 import React from "react"
 
-//My code  
+
 const Header = (props) => {
   return (
     <div>
@@ -12,12 +12,17 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <p>{props.part1} {props.exercises1}</p>
+      <Part name={props.part1} number={props.exercises1}/>
+      <Part name={props.part2} number={props.exercises2}/>
+      <Part name={props.part3} number={props.exercises3}/>
+    </div>
+  )
+}
 
-      <p>{props.part2} {props.exercises2}</p>
-
-      <p>{props.part3} {props.exercises3}</p>
-
+const Part = (props) => {
+  return (
+    <div>
+      <p>{props.name} {props.number}</p>
     </div>
   )
 }
@@ -25,7 +30,7 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <div>
-      <p>Number of exercises = {props.total}</p>
+      <p>Number of exercises {props.total}</p>
     </div>
   )
 }
@@ -45,15 +50,19 @@ const App = () => {
 
   const sum_exercises = exercises1+exercises2+exercises3
   
-  
   return (
     <div>
 
+        
         <div>
           <Header course={course} />
-          <Content part1={part1} part2={part2} part3={part3} exercises1={exercises1} exercises2={exercises2} exercises3={exercises3} />
+          <Content part1={part1} exercises1={exercises1} part2={part2} exercises2={exercises2} part3={part3} exercises3={exercises3} />
           <Total total={sum_exercises} />
         </div>
+
+
+              
+        
 
         
     </div>
