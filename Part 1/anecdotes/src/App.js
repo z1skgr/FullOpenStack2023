@@ -6,6 +6,15 @@ const Button = ({ onClick, text }) => (
   </button>
 )
 
+const Expression = (props) => {
+  return (
+    <div>
+      <p>{props.text}</p>
+      <p>has {props.votes} votes</p>
+    </div>
+  )
+}
+
 
 const App = () => {
   const anecdotes = [
@@ -20,18 +29,27 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0) 
+  const [voted, setVoted] = useState(Array(anecdotes.length).fill(0)) 
    
   
   const NewAnecdote = () => {
-    setSelected([Math.floor(Math.random() * anecdotes.length)])
+    setSelected([Math.floor(Math.random() * (anecdotes.length))])
   }
 
+  const NewVote = () => {
+
+    const vv=[...voted]
+    vv[selected]+=1
+    setVoted(vv)
+    
+  }
 
 
   return (
     <div>
-      {anecdotes[selected]}
+      <Expression text={anecdotes[selected]} votes={voted[selected]}  />
       <div>
+      <Button onClick={NewVote} text='Vote' />
         <Button onClick={NewAnecdote} text='Next anecdote' />
       </div>
       
