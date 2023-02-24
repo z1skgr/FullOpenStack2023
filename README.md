@@ -11,53 +11,37 @@ Learn
 
 over several interactive courses and examples
 
-### [Part 0](https://fullstackopen.com/en/part0)
-### [Part 1](https://fullstackopen.com/en/part1)
-### [Part 2](https://fullstackopen.com/en/part2)
-### [Part 3](https://fullstackopen.com/en/part3)
-### [Part 4](https://fullstackopen.com/en/part4)
-### [Part 5](https://fullstackopen.com/en/part5)
-### [Part 6](https://fullstackopen.com/en/part6)
-### [Part 7](https://fullstackopen.com/en/part7)
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-c3ow" colspan="4">Full Stack Open 2022</th>
+    <th class="tg-c3ow" colspan="4"><a href="https://fullstackopen.com/en/">Full Stack Open 2022</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">Part 0<br>Fundamentals of Web apps</td>
-    <td class="tg-0pky">Part 1<br>Introduction to React</td>
-    <td class="tg-0pky">Part 2<br>Communicating with server</td>
-    <td class="tg-0pky">Part 3<br>Programming a server with NodeJS and Express</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part0">Part 0</a><br><a href=""Part 1">Fundamentals of Web apps</a></td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part1">Part 1</a><br><a href="https://fullstackopen.com/en/part0">Introduction to React</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part2">Part 2</a><br><a href="https://fullstackopen.com/en/part0">Communicating with server</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part3">Part 3</a><br><a href="https://fullstackopen.com/en/part0">Programming a server with NodeJS and Express</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Part 4<br>Testing Express servers, user administration</td>
-    <td class="tg-0pky">Part 5<br>Testing React apps</td>
-    <td class="tg-0pky">Part 6<br>Advanced state management</td>
-    <td class="tg-0pky">Part 7<br>React router, custom hooks, styling app with CSS and webpack</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part4">Part 4</a><br><a href="https://fullstackopen.com/en/part0">Testing Express servers, user administration</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part5">Part 5</a><br><a href="https://fullstackopen.com/en/part0">Testing React apps</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part6">Part 6</a><br><a href="https://fullstackopen.com/en/part0">Advanced state management</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part7">Part 7</a><br><a href="https://fullstackopen.com/en/part0">React router, custom hooks, styling app with CSS and webpack</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Part 8<br>GraphQL</td>
-    <td class="tg-0pky">Part 9<br>TypeScript</td>
-    <td class="tg-0pky">Part 10<br>React Native</td>
-    <td class="tg-0pky">Part 11<br>CI/CD</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part8">Part 8</a><br><a href="https://fullstackopen.com/en/part0">GraphQL</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part9">Part 9</a><br><a href="https://fullstackopen.com/en/part0">TypeScript</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part10">Part 10</a><br><a href="https://fullstackopen.com/en/part0">React Native</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part11">Part 11</a><br><a href="https://fullstackopen.com/en/part0">CI/CD</td>
   </tr>
   <tr>
     <td class="tg-0pky"></td>
-    <td class="tg-0pky">Part 12<br>Containers</td>
-    <td class="tg-0pky">Part 13<br>Using relational databases</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part12">Part 12</a><br><a href="https://fullstackopen.com/en/part0">Containers</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part13">Part 13</a><br><a href="https://fullstackopen.com/en/part0">Using relational databases</td>
     <td class="tg-0pky"></td>
   </tr>
 </tbody>
