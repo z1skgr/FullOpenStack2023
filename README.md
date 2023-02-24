@@ -21,7 +21,7 @@ over several interactive courses and examples
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part0">Part 0</a><br><a href=""Part 1">Fundamentals of Web apps</a></td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part0">Part 0</a><br><a href="FullOpenStack2022/Part 1/">Fundamentals of Web apps</a></td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part1">Part 1</a><br><a href="https://fullstackopen.com/en/part0">Introduction to React</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part2">Part 2</a><br><a href="https://fullstackopen.com/en/part0">Communicating with server</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part3">Part 3</a><br><a href="https://fullstackopen.com/en/part0">Programming a server with NodeJS and Express</td>
