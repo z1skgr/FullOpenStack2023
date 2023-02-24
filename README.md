@@ -40,7 +40,7 @@ over several interactive courses and examples
   </tr>
   <tr>
     <td class="tg-0pky"></td>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part12">Part 12</a>Containers</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part12">Part 12</a> Containers</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part13">Part 13</a><br>Using relational databases</td>
     <td class="tg-0pky"></td>
   </tr>
