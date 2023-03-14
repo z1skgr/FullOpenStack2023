@@ -1,20 +1,20 @@
 import React from "react"
 
 
-const Header = (props) => {
+const Header = ({course}) => {
   return (
     <div>
-      <h1>{props.course}</h1>        
+      <h1>{course.name}</h1>        
     </div>
   )
 }
 
-const Content = ({part}) => {
+const Content = ({course}) => {
   return (
     <div>
-      <Part name={part[0].name} number={part[0].exercises}/>
-      <Part name={part[1].name} number={part[1].exercises}/>
-      <Part name={part[2].name} number={part[2].exercises}/>
+      <Part name={course.parts[0].name} number={course.parts[0].exercises}/>
+      <Part name={course.parts[1].name} number={course.parts[1].exercises}/>
+      <Part name={course.parts[2].name} number={course.parts[2].exercises}/>
     </div>
   )
 }
@@ -40,15 +40,15 @@ const Total = (props) => {
 
 
 const App = () => {
-  const course = 'Half Stack application development'
-  const part = [{name: 'Fundamentals of React',
+  const course = {name:'Half Stack application development',
+  parts: [{name: 'Fundamentals of React',
   exercises: 10},
     {name:'Using props to pass data',
   exercises: 7},
    {name :'State of component',
-   exercises : 14}]
+   exercises : 14}]}
 
-  const sum_exercises = part[0].exercises+part[1].exercises+part[2].exercises
+  const sum_exercises = course.parts[0].exercises+course.parts[1].exercises+course.parts[2].exercises
   
   return (
     <div>
@@ -56,8 +56,8 @@ const App = () => {
         
         <div>
           <Header course={course} />
-          <Content part={part}  />
-          <Total total={sum_exercises} />
+          <Content course={course}  />
+              <Total total={sum_exercises} />
         </div>
 
 
@@ -66,7 +66,8 @@ const App = () => {
 
         
     </div>
-  )
+  )   
+  
 }
 
 
