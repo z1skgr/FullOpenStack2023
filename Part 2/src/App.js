@@ -1,6 +1,30 @@
 import React from "react"
 
 
+const Course = ({ course }) => { 
+  console.log(course)
+
+  let result = 0;
+  course.parts.forEach((number, index) => {
+    result += number.exercises;
+  });
+
+  return (
+    <div>
+
+      <Header text={course.name} />
+      <Label text={course.parts[0].name} value={course.parts[0].exercises}/>
+      <Label text={course.parts[1].name} value={course.parts[1].exercises}/>
+      <Label text={course.parts[2].name} value={course.parts[2].exercises}/>
+      <Label text={course.parts[3].name} value={course.parts[3].exercises}/>
+      <Total value={result}/>
+    </div>
+  )
+}
+
+
+
+
 const Header = (props) => {
   console.log(props)
   return <h1>{props.text}</h1>        
@@ -16,19 +40,18 @@ const Label = (props) => {
 
 }
 
-const Course = ({ course }) => { 
-  console.log(course)
 
+
+const Total = (props) => {
+  console.log(props)
   return (
     <div>
-      <Header text={course.name}/>
-      <Label text={course.parts[0].name} value={course.parts[0].exercises}/>
-      <Label text={course.parts[1].name} value={course.parts[1].exercises}/>
-      <Label text={course.parts[2].name} value={course.parts[2].exercises}/>
-
+     <p> <b> Total of {props.value} exercises </b> </p>
     </div>
   )
+
 }
+
 
 const App = () => {
   const course = {
@@ -49,6 +72,11 @@ const App = () => {
         name: 'State of a component',
         exercises: 14,
         id: 3
+      },
+      {
+        name: 'Redux',
+        exercises: 11,
+        id: 4
       }
     ]
   }
