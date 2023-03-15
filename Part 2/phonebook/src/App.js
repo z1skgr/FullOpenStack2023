@@ -4,6 +4,9 @@ import Person from './components/Person'
 import Filter from './components/Filter'
 import personService from "./services/persons"
 import Message from "./components/Message";
+import "./index.css"
+//To this
+
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -24,6 +27,15 @@ const App = () => {
         });
 
       }, [])
+
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+        return () => {
+          clearTimeout(timer);
+        };
+      }, [message]);
   
 
   const addPerson = (event) => {
@@ -59,16 +71,18 @@ const App = () => {
         setPersons(updatedPersons);
         setInitial(updatedPersons);
         setMessage(`Updated ${newName}'s number`);}
-        ).catch((error) => setMessage(error.response.data.error));
+        ).catch(error=>{setMessage(
+          `[ERROR] ${error.response.data.error}`
+        )});
         //console.log(`Updated ${newName}'s number to ${newNumber}`  );
           
       }else{
-        setMessage(`Invalid number`);
+        setMessage(`[ERROR] Invalid number`);
       }
       }
     }else{
+
       const num = persons.find((person) => person.id === persons.length+1)
-      
       const nameObject = {
         name: newName,
         number: newNumber,
@@ -93,10 +107,12 @@ const App = () => {
           setInitial(persons.concat(returnedPerson))
           setMessage(`Added ${newName} to phone-book`)
           console.log(`Added ${returnedPerson.name} to phone-book with number ${returnedPerson.number}`)
-        }).catch((error)=>setMessage(error.response.data.error))
+        }).catch(error=>{setMessage(
+          `[ERROR] ${error.response.data.error}`
+        )})
       }
       else{
-        setMessage(`Invalid  number`);
+        setMessage(`[ERROR] Invalid  number`);
       }
       
 
@@ -142,11 +158,12 @@ const App = () => {
       if(persons_to_show.length>0){
         setMessage(`Filtering...`)
       }else{
-        setMessage(`No results..`)
+        setMessage(`[ERROR] No results..`)
+        
       }
     }else{
       setPersons(initial)
-      setMessage(``)
+      setMessage(null)
     }
     
     
@@ -163,7 +180,9 @@ const App = () => {
         setInitial(updatedPersons);
         setMessage(`Deleted ${name} from phone_book`);
         console.log(`Deleted ${name} from phone_book`);
-      }).catch((error)=>setMessage(error.response.data.error))
+      }).catch(error=>{setMessage(
+        `[ERROR] ${error.response.data.error}`
+      )})
         console.log('delete')
     }
 
@@ -175,7 +194,7 @@ const App = () => {
   return (
     
       <div>
-      <h2>Phone Book</h2>
+      <h1>Phone Book</h1>
       
       <Filter newFilter={newFilter} handleFilterChange={handleFilterChange} />
       
