@@ -46,3 +46,69 @@ over several interactive courses and examples
   </tr>
 </tbody>
 </table>
+
+Exercises done per round
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky" colspan="8">Exercises per round</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Part 0</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 4</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 8</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 12</td>
+    <td class="tg-baqh"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Part 1</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 5</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 9</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 13</td>
+    <td class="tg-baqh"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Part 2</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 6</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 10</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-baqh"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Part 3</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 7</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Part 11</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-baqh"></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="7">Total</td>
+    <td class="tg-0lax"></td>
+  </tr>
+</tbody>
+</table>
