@@ -1,9 +1,4 @@
-[Full Stack Open 2022](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201)
-
-[Introduction to React](https://fullstackopen.com/en/part1)
-
-[courseinfo]
-* [1.1 - 1.2](https://fullstackopen.com/en/part1/int# Getting Started with Create React App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
