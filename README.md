@@ -66,7 +66,7 @@ over several interactive courses and examples
 
 ## [Funtamentals](https://fullstackopen.com/en/part0)
 
-## [Introduction to React]((https://fullstackopen.com/en/part1))
+## [Introduction to React](https://fullstackopen.com/en/part1)
 
 1. [Introduction to React](https://fullstackopen.com/en/part1/introduction_to_react)  
 2. [JavaScript](https://fullstackopen.com/en/part1/java_script)  
