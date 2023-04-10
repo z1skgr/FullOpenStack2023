@@ -1,16 +1,6 @@
 # FullOpenStack2022
 Courses developed for Web Development from Helsinki University focusing on building single page applications
 
-Learn 
-1. React 
-2. Redux 
-3. Node.js 
-4. MongoDB 
-5. GraphQL
-6. TypeScript
-
-over several interactive courses and examples
-
 
 
 <table class="tg">
@@ -47,17 +37,43 @@ over several interactive courses and examples
 </tbody>
 </table>
 
-Exercises done per round
+Learn 
+1. React 
+2. Redux 
+3. Node.js 
+4. MongoDB 
+5. GraphQL
+6. TypeScript
+
+over several interactive courses and examples
+
+## Table of Contents
+
+* [Funtamentals of WebApps](#funtamentals)
+* [Introduction to React](#introduction-to-react)
+* [Communicating with server](#communicating-with-server)
+* [Programming a server](#programming-server)
+* [Testing server/User administration](#user-administration)
+* [Testing React App](#testing-react)
+* [Advanced state management](#advanced-state-management)
+* [React router](#react-rooter)
+* [GraphQL](#graphql)
+* [Typescript](#typescript)
+* [React Native](#react-native)
+* [CI/CD](#CI-CD)
+* [Containers](#containers)
+* [Relational Database](#relational-db)
+
+
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
@@ -67,24 +83,24 @@ Exercises done per round
 </thead>
 <tbody>
   <tr>
-    <td class="tg-c3ow">Part 0</td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%200">Part 0</td>
+    <td class="tg-c3ow">6/6</td>
     <td class="tg-c3ow">Part 4</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">Part 8</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">Part 12</td>
-    <td class="tg-baqh"></td>
+    <td class="tg-c3ow"></td>
   </tr>
   <tr>
-    <td class="tg-c3ow">Part 1</td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201">Part 1</td>
+    <td class="tg-c3ow">14/14</td>
     <td class="tg-c3ow">Part 5</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">Part 9</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">Part 13</td>
-    <td class="tg-baqh"></td>
+    <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">Part 2</td>
@@ -94,7 +110,7 @@ Exercises done per round
     <td class="tg-c3ow">Part 10</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
-    <td class="tg-baqh"></td>
+    <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">Part 3</td>
@@ -104,11 +120,30 @@ Exercises done per round
     <td class="tg-c3ow">Part 11</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
-    <td class="tg-baqh"></td>
+    <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-0pky" colspan="7">Total</td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky"></td>
   </tr>
 </tbody>
 </table>
+
+## [Funtamentals](https://fullstackopen.com/en/part0)
+
+## [Introduction to React]((https://fullstackopen.com/en/part1))
+
+1. [Introduction to React](https://fullstackopen.com/en/part1/introduction_to_react)  
+2. [JavaScript](https://fullstackopen.com/en/part1/java_script)  
+3. [Component state, event handlers](https://fullstackopen.com/en/part1/component_state_event_handlers)
+4. [Debugging React apps](https://fullstackopen.com/en/part1/a_more_complex_state_debugging_react_apps)
+
+There are four main topics to study in this part. First thing is familiarization with React-library for browser display using functions. Javascript mechanisms and event handlers contribute to app development
+
+- [courseinfo](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/courseinfo) -  Course information web page with react basics
+
+- [unicafe](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/unicafe) -  Statistic App demonstating event handling
+
+- [anecdotes](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/anecdotes) - Anecdote generator with complex components/functions
+
+[Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201)
