@@ -4,10 +4,13 @@ import React from "react"
 const Course = ({ course }) => { 
   console.log(course)
 
-  let result = 0;
-  course.parts.forEach((number, index) => {
-    result += number.exercises;
-  });
+  const total = course.parts.reduce((prev, current) => {
+    return prev + current.exercises;
+  }, 0);
+
+
+
+  
 
   return (
     <div>
@@ -17,13 +20,10 @@ const Course = ({ course }) => {
       <Label text={course.parts[1].name} value={course.parts[1].exercises}/>
       <Label text={course.parts[2].name} value={course.parts[2].exercises}/>
       <Label text={course.parts[3].name} value={course.parts[3].exercises}/>
-      <Total value={result}/>
+      <Total value={total}/>
     </div>
   )
 }
-
-
-
 
 const Header = (props) => {
   console.log(props)
@@ -40,13 +40,11 @@ const Label = (props) => {
 
 }
 
-
-
 const Total = (props) => {
   console.log(props)
   return (
     <div>
-     <p> <b> Total of {props.value} exercises </b> </p>
+     <p><b>Total of {props.value} exercises</b></p>
     </div>
   )
 
