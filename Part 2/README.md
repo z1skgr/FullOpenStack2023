@@ -1,4 +1,4 @@
-# [Full Stack Open 2022](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201)
+# [Full Stack Open 2022](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202)
 
 ## [Communicating with server](https://fullstackopen.com/en/part2)
 Numerous commits corresponding to each exercise. Folders contain final solutions.
