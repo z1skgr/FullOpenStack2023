@@ -1,34 +1,19 @@
 {
   "persons": [
     {
-      "name": "Arto Hellas",
-      "number": "040-123456",
-      "id": 1
-    },
-    {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
-      "id": 2
-    },
-    {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": 3
-    },
-    {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
+      "name": "Mario",
+      "number": "1234567890",
       "id": 4
     },
     {
-      "name": "Christos Ziskas",
-      "number": "2351075820",
-      "id": 5
+      "name": "Gold",
+      "number": "1201201201",
+      "id": 1557
     },
     {
-      "name": "Alex Ziskas",
-      "number": "12-23456234",
-      "id": 6
+      "name": "Bold",
+      "number": "1200120120",
+      "id": 1647
     }
   ]
 }
