@@ -6,6 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run server`
+
+Runs the JSON server in the development mode.\
+For exercises ([exersice 2.11](https://fullstackopen.com/en/part2/getting_data_from_server#exercise-2-11))
+
+* Run the app
+* Launch JSON server in new tab 
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -68,3 +77,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
