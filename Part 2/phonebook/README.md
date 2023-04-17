@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm run server`
 
 Runs the JSON server in the development mode.\
-For exercises ([exersice 2.11](https://fullstackopen.com/en/part2/getting_data_from_server#exercise-2-11))
+For exercises ([exersice 2.11](https://fullstackopen.com/en/part2/getting_data_from_server#exercise-2-11) [ or above](https://fullstackopen.com/en/part2/altering_data_in_server#exercises-2-12-2-15))
 
 * Run the app
 * Launch JSON server in new tab 
