@@ -2,7 +2,8 @@ import { useState,useEffect } from 'react'
 import PersonForm from './components/PersonForm'
 import Person from './components/Person'
 import Filter from './components/Filter'
-import axios from 'axios'
+import personService from "./services/persons"
+import Message from "./components/Message";
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -10,28 +11,47 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [newFilter, setNewFilter] = useState('')
   const [initial, setInitial] = useState(persons)
+  const [message, setMessage] = useState(null)
 
     // Fetch person data from json-server
     useEffect(() => {
       console.log('effect')
-      axios
-        .get('http://localhost:3001/persons')
-        .then(response => {
-          console.log('promise fulfilled')
-          setPersons(response.data)
-          setInitial(response.data)
-        })
-    }, [])
+      personService.getAll().then((initialPersons) => {
+          setPersons(initialPersons);
+          setInitial(initialPersons);
+        });
+      }, [])
   
 
   const addPerson = (event) => {
     event.preventDefault()
     const found = persons.findIndex((element) => element.name === newName)
     //console.log(`${found} index`)
-    
+
     if(found>-1){
-      alert(newName + ' is already added to phonebook')
+      if (
+        window.confirm(
+          `${newName} is in phonebook, do you want to replace it?`
+        )
+      ){
+      const findObject = {
+        ...persons[found],
+        number: newNumber
+      }
+      //console.log(findObject)
+      personService.update(persons[found].id, findObject ).then((returnedPerson) => {
+      const updatedPersons = persons.map((person) =>
+      person.id !== returnedPerson.id ? person : returnedPerson);
+      console.log(updatedPersons)
+      setPersons(updatedPersons);
+      setInitial(updatedPersons);
+      setMessage(`Updated ${newName}'s number`);}
+      ).catch((error) => setMessage(error.response.data.error));
+      //console.log(`Updated ${newName}'s number to ${newNumber}`  );
+      }
     }else{
+
+      
       const nameObject = {
         name: newName,
         number: newNumber,
@@ -39,14 +59,17 @@ const App = () => {
       }
     
       
-      axios
-      .post('http://localhost:3001/persons', nameObject)
-      .then(response => {
-        setPersons(persons.concat(nameObject))
-        setInitial(persons.concat(nameObject))
-      })
-    }
 
+      personService
+      .create(nameObject)
+      .then(returnedPerson => {
+        setPersons(persons.concat(returnedPerson))
+        setInitial(persons.concat(returnedPerson))
+        setMessage(`Added ${newName} to phonebook`)
+        console.log(`Added ${returnedPerson.name} to phonebook with number ${returnedPerson.number}`)
+      }).catch((error)=>setMessage(error.response.data.error))
+    }
+      
     setNewName('')
     setNewNumber('')
     
@@ -82,8 +105,15 @@ const App = () => {
       })
 
       setPersons(personstoshow)
+      
+      if(personstoshow.length>0){
+        setMessage(`Filtering...`)
+      }else{
+        setMessage(`No results..`)
+      }
     }else{
       setPersons(initial)
+      setMessage(``)
     }
     
     
@@ -94,7 +124,7 @@ const App = () => {
     
       <div>
       <h2>Phonebook</h2>
-
+      
       <Filter newFilter={newFilter} handleFilterChange={handleFilterChange} />
       
       <h2>add a new</h2>
@@ -104,6 +134,8 @@ const App = () => {
       <h2>Numbers</h2>
 
       <Person person={persons} />
+
+      <Message message={message} />
       </div>
     
      
