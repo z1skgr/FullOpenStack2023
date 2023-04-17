@@ -30,7 +30,7 @@ const App = () => {
     //console.log(`${found} index`)
     
     if(found>-1){
-      alert(newName + ' is already to phonebook')
+      alert(newName + ' is already added to phonebook')
     }else{
       const nameObject = {
         name: newName,
@@ -38,9 +38,15 @@ const App = () => {
         id: persons.length+1
       }
     
-      setPersons(persons.concat(nameObject))
-      setInitial(persons.concat(nameObject))
+      
+      axios
+      .post('http://localhost:3001/persons', nameObject)
+      .then(response => {
+        setPersons(persons.concat(nameObject))
+        setInitial(persons.concat(nameObject))
+      })
     }
+
     setNewName('')
     setNewNumber('')
     
