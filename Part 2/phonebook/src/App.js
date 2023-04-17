@@ -5,8 +5,6 @@ import Filter from './components/Filter'
 import personService from "./services/persons"
 import Message from "./components/Message";
 import "./index.css"
-//To this
-
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -71,9 +69,15 @@ const App = () => {
         setPersons(updatedPersons);
         setInitial(updatedPersons);
         setMessage(`Updated ${newName}'s number`);}
-        ).catch(error=>{setMessage(
-          `[ERROR] ${error.response.data.error}`
-        )});
+        ).catch(error=>{
+          console.log(error)
+              setPersons(persons.filter(person => person.id !== findObject.id))
+              setNewName('')
+              setNewNumber('')
+              setMessage(
+                `[ERROR] ${findObject.name} was already deleted from server`
+              )
+        })
         //console.log(`Updated ${newName}'s number to ${newNumber}`  );
           
       }else{
@@ -86,7 +90,7 @@ const App = () => {
       const nameObject = {
         name: newName,
         number: newNumber,
-        id: Math.floor(Math.random() * 1001) +1000
+        id: persons.length+1
       }
 
       
@@ -107,9 +111,7 @@ const App = () => {
           setInitial(persons.concat(returnedPerson))
           setMessage(`Added ${newName} to phone-book`)
           console.log(`Added ${returnedPerson.name} to phone-book with number ${returnedPerson.number}`)
-        }).catch(error=>{setMessage(
-          `[ERROR] ${error.response.data.error}`
-        )})
+        })
       }
       else{
         setMessage(`[ERROR] Invalid  number`);
@@ -180,9 +182,7 @@ const App = () => {
         setInitial(updatedPersons);
         setMessage(`Deleted ${name} from phone_book`);
         console.log(`Deleted ${name} from phone_book`);
-      }).catch(error=>{setMessage(
-        `[ERROR] ${error.response.data.error}`
-      )})
+      })
         console.log('delete')
     }
 
