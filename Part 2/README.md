@@ -13,7 +13,7 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 * [2.12 - 2.15](https://fullstackopen.com/en/part2/altering_data_in_server#exercises-2-12-2-15)
 * [2.16 - 2.17](https://fullstackopen.com/en/part2/adding_styles_to_react_app#exercises-2-16-2-17)
 
-### [data for countries](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202/dataforcountries)
+### [countries](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202/countries)
 * [2.18 - 2.20](https://fullstackopen.com/en/part2/adding_styles_to_react_app#exercises-2-18-2-20)
 
 
