@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, Label, Title } from './Form'
+import { GetWeather } from './Weather'
 
 
 const CountryInfo = ({ country }) => {
@@ -20,6 +21,7 @@ const CountryInfo = ({ country }) => {
                  key={country.name.commons}
                  alt='flag.png'/>
 
+            <GetWeather city={country.capital} />
         </>
     )
 }

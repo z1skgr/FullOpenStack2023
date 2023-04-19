@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+For the purposes of this exercise, there is `.env`
+where it has the REACT_APP_API_KEY. It is derived from the [OpenWeatherMAP API](https://openweathermap.org/api) key generator to synchronize the data for each city's weather conditions
+
 ## Available Scripts
 
 In the project directory, you can run:
