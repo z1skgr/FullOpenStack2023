@@ -3,7 +3,7 @@ import axios from 'axios'
 import { FilterDisplay } from './Components/Filter'
 
 
-
+// Filter component for rendering
 const App = () => {
 
   const [countries, setCountries] = useState([])

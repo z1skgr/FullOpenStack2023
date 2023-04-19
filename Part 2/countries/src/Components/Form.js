@@ -1,9 +1,8 @@
-const Input = (props) => {  
-    return (  
-    <p>
+const Button = (props) => {
+    return(
+    <button onClick={props.handleClick}>
         {props.text}
-        <input value={props.value} onChange={props.onChange} />
-    </p>)
+    </button>)
 }
 
 const Label = (props) => {
@@ -24,4 +23,4 @@ const Title = (props) => {
     )
 }
 
-export {Title, Label, Input}
+export {Title, Label, Button}

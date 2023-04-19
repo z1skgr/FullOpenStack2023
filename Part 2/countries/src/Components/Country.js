@@ -1,4 +1,6 @@
-import { Label, Title } from './Form'
+import { useState } from 'react'
+import { Button, Label, Title } from './Form'
+
 
 const CountryInfo = ({ country }) => {
     return (
@@ -23,12 +25,17 @@ const CountryInfo = ({ country }) => {
 }
 
 const Country = ({ country }) => {
+    const [details, setDetails] = useState(false)
+    const toggleDetails = () => setDetails(!details)
+
     return (
         <div>
             <li>
                 {country.name.common}
                 {' '}
+                <Button handleClick={toggleDetails} text=" show " />
             </li>
+            {details && <CountryInfo key={country.name.official} country={country} />}
         </div>
     )
 }

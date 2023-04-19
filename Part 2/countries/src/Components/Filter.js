@@ -1,5 +1,6 @@
 import { Country, CountryInfo } from './Country'
 
+//Filter countries based on the data collected from API
 const FilterDisplay = ({ countries, filter }) => {
     const filteredCountries = countries.filter
             (country => (country.name.common.toLowerCase()).includes(filter.toLowerCase()))
@@ -20,7 +21,7 @@ const FilterDisplay = ({ countries, filter }) => {
     }else{
         const orderCountries = countries.sort((a, b) => a.name.common > b.name.common ? 1 : -1)
         return orderCountries.map(country => <Country key={country.name.official} country={country} />)
-    }   
+    } 
 }
 
 export {FilterDisplay}
