@@ -28,7 +28,7 @@ let persons = [
 ]
  
   app.get('/', (request, response) => {
-    response.send('<h1>Hello Exercise 3.1!</h1>')
+    response.send('<h1>Hello Exercise 3.2!</h1>')
   })
   
 
@@ -36,6 +36,12 @@ let persons = [
   app.get('/api/persons', (request, response) => {
     
     response.json(persons)
+  })
+
+  app.get('/api/info', (request, response) => {
+    //response.send(`Phone-book has info for `+ persons.length + ` people`)
+    const date_time = new Date().toString(); 
+    response.send(`<p>Phonebook has info for ${persons.length} people.</p><p>${date_time}</p>`);
   })
 
 

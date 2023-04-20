@@ -36,6 +36,7 @@ Inside `package.json`, add to `scripts`
 ## Backend
 Addresses for each application
 * 3.1 http://localhost:3001/api/persons
+* 3.2 http://localhost:3001/api/info
 
 ## Available Scripts
 
@@ -45,10 +46,23 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
-Open [http://localhost:3001](http://localhost:3001/api/persons) to view it in your browser.
+
+Open [http://localhost:3001/api/persons](http://localhost:3001/api/persons) to view it in your browser.
+
+Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### `npm run dev`
+
+Runs the server in the development mode.\
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser. If you have an opened tab, you can refresh the page.
+
+Open [http://localhost:3001/api/persons](http://localhost:3001/api/persons) to view it in your browser. If you have an opened tab, you can refresh the page.
+
+Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it in your browser.
+If you have an opened tab, you can refresh the page.
 
 ### `npm test`
 
