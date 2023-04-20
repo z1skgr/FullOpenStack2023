@@ -1,6 +1,6 @@
 # [Full Stack Open 2022](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203)
 
-## [Communicating with server](https://fullstackopen.com/en/part3)
+## [Programmin server with Node.js and express](https://fullstackopen.com/en/part3)
 Numerous commits corresponding to each exercise. Folders contain final solutions.
 
 

@@ -100,7 +100,6 @@ React code structured apps using styles and communication with a backend api (RE
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202)
 
-
 ## [Programming a server with Node.js](https://fullstackopen.com/en/part3)
 
 1. [Node.js and Express](https://fullstackopen.com/en/part3/node_js_and_express)  
@@ -114,7 +113,6 @@ Simple REST API in Node.js using the Express library. The application's data is 
 
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203)
-
 
 
 ## Exercises per part
