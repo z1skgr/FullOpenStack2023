@@ -34,7 +34,9 @@ Inside `package.json`, add to `scripts`
 
 
 ## Backend
-Addresses for each application
+
+Addresses for each application. Guide for [REST client VS](https://coderethinked.com/rest-client-for-visual-studio-2022/)
+
 ------------
 * 3.1 http://localhost:3001/api/persons
 ------------
@@ -51,8 +53,12 @@ http://localhost:3001/api/persons/4
 HTTP call [delete](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
 
 ------------
-* 3.4
+* 3.5
 HTTP call [post](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
+
+------------
+* 3.6
+invalid HTTP call [post](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
 
 ------------
 

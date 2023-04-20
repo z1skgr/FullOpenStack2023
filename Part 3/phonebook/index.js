@@ -28,7 +28,7 @@ let persons = [
 ]
  
   app.get('/', (request, response) => {
-    response.send('<h1>Hello Exercise 3.5!</h1>')
+    response.send('<h1>Hello Exercise 3.6!</h1>')
   })
   
 
@@ -78,6 +78,16 @@ let persons = [
 
   app.post('/api/persons', (request, response) => {
     const body = request.body
+
+    if (!body.number || !body.name) {
+      return response.status(400).json({ 
+        error: 'content missing' 
+      })
+    }else if(persons.filter(per => per.name === body.name)){
+      return response.status(400).json({ 
+        error: 'content already in phonebook' 
+      })
+    }
    
     const new_person = {
       id: generateId(),
@@ -89,7 +99,6 @@ let persons = [
   
     response.json(per)
   })
-
 
   
 const PORT = 3001
