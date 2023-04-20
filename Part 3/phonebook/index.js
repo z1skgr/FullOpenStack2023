@@ -28,7 +28,7 @@ let persons = [
 ]
  
   app.get('/', (request, response) => {
-    response.send('<h1>Hello Exercise 3.4!</h1>')
+    response.send('<h1>Hello Exercise 3.5!</h1>')
   })
   
 
@@ -68,6 +68,26 @@ let persons = [
   
     response.status(204).end()
 
+  })
+
+
+  const generateId = () => {
+    const Id = Math.floor(Math.random() * 10000000);
+    return Id
+  }
+
+  app.post('/api/persons', (request, response) => {
+    const body = request.body
+   
+    const new_person = {
+      id: generateId(),
+      name: body.name,
+      number: body.number
+    }
+  
+    per = persons.concat(new_person)
+  
+    response.json(per)
   })
 
 

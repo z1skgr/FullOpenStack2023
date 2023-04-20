@@ -51,6 +51,10 @@ http://localhost:3001/api/persons/4
 HTTP call [delete](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
 
 ------------
+* 3.4
+HTTP call [post](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
+
+------------
 
 
 ## Available Scripts
