@@ -101,12 +101,12 @@ React code structured apps using styles and communication with a backend api (RE
 [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202)
 
 
-## [Communication with React](https://fullstackopen.com/en/part3)
+## [Programming a server with Node.js](https://fullstackopen.com/en/part3)
 
-1. [Node.js and Express](https://fullstackopen.com/en/part2/rendering_a_collection_modules)  
-2. [Deploying App to Internet](https://fullstackopen.com/en/part2/forms)  
-3. [Saving data to MongoDB](https://fullstackopen.com/en/part2/getting_data_from_server)
-4. [Validation and ESLint](https://fullstackopen.com/en/part2/altering_data_in_server)
+1. [Node.js and Express](https://fullstackopen.com/en/part3/node_js_and_express)  
+2. [Deploying App to Internet](https://fullstackopen.com/en/part3/deploying_app_to_internet)  
+3. [Saving data to MongoDB](https://fullstackopen.com/en/part3/saving_data_to_mongo_db)
+4. [Validation and ESLint](https://fullstackopen.com/en/part3/validation_and_es_lint)
 
 Simple REST API in Node.js using the Express library. The application's data is stored in a MongoDB database. The application is deployed to the internet.
 

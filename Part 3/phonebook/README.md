@@ -35,8 +35,18 @@ Inside `package.json`, add to `scripts`
 
 ## Backend
 Addresses for each application
+------------
 * 3.1 http://localhost:3001/api/persons
+------------
 * 3.2 http://localhost:3001/api/info
+------------
+* 3.3 
+http://localhost:3001/api/persons/1 \
+http://localhost:3001/api/persons/2 \
+http://localhost:3001/api/persons/3 \
+http://localhost:3001/api/persons/4 
+------------
+
 
 ## Available Scripts
 
@@ -51,6 +61,11 @@ Open [http://localhost:3001/api/persons](http://localhost:3001/api/persons) to v
 
 Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it in your browser.
 
+Open [http://localhost:3001/api/persons:ID](http://localhost:3001/api/persons) to view it in your browser. 
+`ID` is a number specifying the person for displaying.\
+For instance [link](http://localhost:3001/api/persons/1) If you have an opened tab, you can refresh the page.
+
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
@@ -59,10 +74,16 @@ You may also see any lint errors in the console.
 Runs the server in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser. If you have an opened tab, you can refresh the page.
 
-Open [http://localhost:3001/api/persons](http://localhost:3001/api/persons) to view it in your browser. If you have an opened tab, you can refresh the page.
+Open [http://localhost:3001/api/persons](http://localhost:3001/api/persons) to view it in your browser. 
+If you have an opened tab, you can refresh the page.
 
 Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it in your browser.
 If you have an opened tab, you can refresh the page.
+
+Open [http://localhost:3001/api/persons:ID](http://localhost:3001/api/persons) to view it in your browser. `ID` is a number specifying the person for displaying.\
+For instance [link](http://localhost:3001/api/persons/1) for displaying first person in the list. 
+If you have an opened tab, you can refresh the page.
+
 
 ### `npm test`
 
