@@ -37,7 +37,6 @@ Inside `package.json`, add to `scripts`
 Addresses for each application
 ------------
 * 3.1 http://localhost:3001/api/persons
-<<<<<<< HEAD:Part 3/phonebook/README.md
 ------------
 * 3.2 http://localhost:3001/api/info
 ------------
@@ -46,10 +45,13 @@ http://localhost:3001/api/persons/1 \
 http://localhost:3001/api/persons/2 \
 http://localhost:3001/api/persons/3 \
 http://localhost:3001/api/persons/4 
+
+------------
+* 3.4
+HTTP call [delete](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
+
 ------------
 
-=======
->>>>>>> parent of b193ada (Ex 2.2):Part 3/backend/README.md
 
 ## Available Scripts
 
@@ -69,7 +71,7 @@ For instance [link](http://localhost:3001/api/persons/1) If you have an opened t
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-<<<<<<< HEAD:Part 3/phonebook/README.md
+
 ### `npm run dev`
 
 Runs the server in the development mode.\
@@ -86,8 +88,7 @@ For instance [link](http://localhost:3001/api/persons/1) for displaying first pe
 If you have an opened tab, you can refresh the page.
 
 
-=======
->>>>>>> parent of b193ada (Ex 2.2):Part 3/backend/README.md
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

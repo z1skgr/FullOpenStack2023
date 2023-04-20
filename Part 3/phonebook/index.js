@@ -28,11 +28,7 @@ let persons = [
 ]
  
   app.get('/', (request, response) => {
-<<<<<<< HEAD:Part 3/phonebook/index.js
-    response.send('<h1>Hello Exercise 3.3!</h1>')
-=======
-    response.send('<h1>Hello Exercise 3.1!</h1>')
->>>>>>> parent of b193ada (Ex 2.2):Part 3/backend/index.js
+    response.send('<h1>Hello Exercise 3.4!</h1>')
   })
   
 
@@ -42,7 +38,6 @@ let persons = [
     response.json(persons)
   })
 
-<<<<<<< HEAD:Part 3/phonebook/index.js
   app.get('/api/info', (request, response) => {
     const date_time = new Date().toString(); 
     response.send(`<p>Phonebook has info for ${persons.length} people.</p><p>${date_time}</p>`);
@@ -67,9 +62,13 @@ let persons = [
   })
 
 
-=======
->>>>>>> parent of b193ada (Ex 2.2):Part 3/backend/index.js
+  app.delete('/api/persons/:id', (request, response) => {
+    const id = Number(request.params.id)
+    persons = persons.filter(per => per.id !== id)
+  
+    response.status(204).end()
 
+  })
 
 
   
