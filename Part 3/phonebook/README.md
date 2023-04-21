@@ -5,9 +5,9 @@ This project was bootstrapped with [npm init](https://docs.npmjs.com/cli/v8/comm
 
 The whole concept of this exercise is implement functionality on the server side. 
 
-* [REST API](https://expressjs.com) in Node.js
+* [REST API](https://expressjs.com) in Node.js.
 * [MongoDB](https://www.mongodb.com) provides the services for storage depended on REST API calls.
-* [PostMAN](https://www.postman.com) or [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)  REST call tester 
+* [PostMAN](https://www.postman.com) or [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)  REST call tester.
 
 
 ## Setup
@@ -54,7 +54,7 @@ Inside `package.json`, add to `scripts`
 
 and 
 
-* "proxy": "http://localhost:3001" to link server with client side
+* "proxy": "http://localhost:3001" to link server with client side.
 
 
 
@@ -71,7 +71,7 @@ Some other free options hosting options that work well
 
 
 There is guide for deploying application on [fly.io](https://fullstackopen.com/en/part3/deploying_app_to_internet#application-to-the-internet) (default provider of [FullStackOpen](https://fullstackopen.com/en/)).
-In our implementation, we decide to go with [Railway](https://railway.app) as our hosting tool. [Here](https://docs.railway.app/develop/projects), you can start exploring Railway .
+In our implementation, we decide to go with [Railway](https://railway.app) as our hosting tool. [Here](https://docs.railway.app/develop/projects), you can start exploring Railway.
 
 ## MongoDB
 To store our data  indefinitely, we exploit some data storage services. To fulfil the requirements of these project, we select [MongoDB](https://www.mongodb.com) as database provider due to his lower complexity compared to a relational database and more specifically [MongoDB Atlas](https://www.mongodb.com/atlas/database). Link [here](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#mongo-db) to follow guide.
