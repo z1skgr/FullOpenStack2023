@@ -1,6 +1,6 @@
 {
   "name": "part-3",
-  "version": "0.3.6",
+  "version": "0.3.7-8",
   "description": "",
   "main": "index.js",
   "module": "main.js",
@@ -13,6 +13,7 @@
   "author": "Christos Ziskas",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "morgan": "^1.10.0"
   }
 }
