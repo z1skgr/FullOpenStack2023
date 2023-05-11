@@ -77,7 +77,7 @@ In our implementation, we decide to go with [Railway](https://railway.app) as ou
 To store our data  indefinitely, we exploit some data storage services. To fulfil the requirements of these project, we select [MongoDB](https://www.mongodb.com) as database provider due to his lower complexity compared to a relational database and more specifically [MongoDB Atlas](https://www.mongodb.com/atlas/database). Link [here](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#mongo-db) to follow guide.
 
 ## EsLint
-ESLint[https://eslint.org] analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline. You can find esl config [here](https://fullstackopen.com/en/part3/validation_and_es_lint#lint).
+[ESLint](https://eslint.org) analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline. You can find esl config [here](https://fullstackopen.com/en/part3/validation_and_es_lint#lint).
 
 ## Backend
 
@@ -107,6 +107,19 @@ HTTP call [post](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/
 invalid HTTP call [post](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
 
 ------------
+* 3.15 - 18
+HTTP call [delete](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
+
+[http://localhost:3001/api/persons/id](http://localhost:3001/api/persons/642333558c9b82b26e52ea8f) \
+
+invalid HTTP [call](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook/requests)
+
+[http://localhost:3001/api/persons/12345](http://localhost:3001/api/persons/12345)
+
+
+
+------------
+
 
 
 ## Available Scripts

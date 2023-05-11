@@ -2,3 +2,9 @@ DELETE http://localhost:3001/api/persons/1
 
 ###
 DELETE http://localhost:3001/api/persons/2
+
+###
+DELETE http://localhost:3001/api/persons/642333558c9b82b26e52ea8f
+
+###
+DELETE http://localhost:3001/api/persons/645d0ab5b51d2684822b3de4
