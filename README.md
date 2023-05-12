@@ -109,7 +109,7 @@ React code structured apps using styles and communication with a backend api (RE
 
 Simple REST API in Node.js using the Express library. The application's data is stored in a MongoDB database. The application is deployed to the internet.
 
-- [phonebook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook) - Full stack App Phonebook 
+- [phonebook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook-backend) - Full stack App Phonebook 
 
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203)
