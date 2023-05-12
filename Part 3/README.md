@@ -15,5 +15,5 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 * [3.22](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#exercises-3-22)
 
 ### [Link for Deploy](https://railway.app/dashboard)
-[fullopenstack2023-production.up.railway.app](fullopenstack2023-production.up.railway.app)
+[fullopenstack2023.railway.app](https://fullopenstack2023-production.up.railway.app/)
 
