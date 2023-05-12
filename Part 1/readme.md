@@ -1,14 +1,14 @@
-# [Full Stack Open 2022](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201)
+# [Full Stack Open 2023](https://fullstackopen.com/en/) - [Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201)
 
 ## [Introduction to React](https://fullstackopen.com/en/part1)
 Numerous commits corresponding to each exercise. Folders contain final solutions.
 
-### [courseinfo](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/courseinfo)
+### [courseinfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/courseinfo)
 * [1.1 - 1.2](https://fullstackopen.com/en/part1/introduction_to_react#exercises-1-1-1-2)
 * [1.3 - 1.5](https://fullstackopen.com/en/part1/java_script#exercises-1-3-1-5)
 
-### [unicafe](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/unicafe)
+### [unicafe](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/unicafe)
 * [1.6 - 1.11](https://fullstackopen.com/en/part1/a_more_complex_state_debugging_react_apps#exercises-1-6-1-14)
 
-### [anecdotes](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/anecdotes)
+### [anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/anecdotes)
 * [1.12 - 1.14](https://fullstackopen.com/en/part1/a_more_complex_state_debugging_react_apps#exercises-1-6-1-14)
