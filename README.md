@@ -10,10 +10,10 @@ Courses developed for Web Development from Helsinki University focusing on build
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part0">Part 0</a><br><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%200">Fundamentals of Web apps</a></td>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part1">Part 1</a><br><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201">Introduction to React</td>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part2">Part 2</a><br><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202">Communicating with server</td>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part3">Part 3</a><br><a href="https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203">Programming a server with NodeJS and Express</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part0">Part 0</a><br><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%200">Fundamentals of Web apps</a></td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part1">Part 1</a><br><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201">Introduction to React</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part2">Part 2</a><br><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202">Communicating with server</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part3">Part 3</a><br><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203">Programming a server with NodeJS and Express</td>
   </tr>
   <tr>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part4">Part 4</a><br>Testing Express servers, user administration</td>
