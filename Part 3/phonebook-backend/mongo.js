@@ -16,17 +16,17 @@ mongoose.set('strictQuery',false)
 mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
-    id_number: String,
-    name: String, 
-    number: String,
+  id_number: String,
+  name: String,
+  number: String,
 })
 
 const Person = mongoose.model('Person', personSchema)
 
 const person = new Person({
-    id_number:  Math.floor(1 + (Math.random() * (99))),
-    name: name, 
-    number: number
+  id_number:  Math.floor(1 + (Math.random() * (99))),
+  name: name,
+  number: number
 })
 
 
@@ -41,11 +41,11 @@ if(process.argv.length===3){
     mongoose.connection.close()
   })
 }else if(process.argv.length===5){
-  person.save().then(result => {
+  person.save().then(() => {
     console.log(`Added ${name} with number ${number} to phonebook`)
     mongoose.connection.close()
   })
 }else{
-  console.log(`Invalid Parameters`)
+  console.log('Invalid Parameters')
   mongoose.connection.close()
 }

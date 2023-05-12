@@ -52,15 +52,11 @@ const App = () => {
         number: newNumber
       }
 
-      var edit_number = newNumber.replace(/-/g, '');
-      console.log(edit_number)
-
-      const dd = !isNaN(+edit_number)
-      console.log(dd);
+      
 
       
 
-      if(dd && edit_number.length===10){
+     
       //console.log(findObject)
       personService.update(persons[found].id, findObject ).then((returnedPerson) => {
         const updatedPersons = persons.map((person) =>
@@ -80,9 +76,7 @@ const App = () => {
         })
         //console.log(`Updated ${newName}'s number to ${newNumber}`  );
           
-      }else{
-        setMessage(`[ERROR] Invalid number`);
-      }
+      
       }
     }else{
 
@@ -95,14 +89,10 @@ const App = () => {
 
       
       
-      var str = newNumber
-      var new_str = str.replace(/-/g, '');
-      console.log(new_str)
-      const dd = !isNaN(+new_str)
-      console.log(dd);
+
       
 
-      if(dd && new_str.length===10){
+
 
         personService
         .create(nameObject)
@@ -111,11 +101,12 @@ const App = () => {
           setInitial(persons.concat(returnedPerson))
           setMessage(`Added ${newName} to phone-book`)
           console.log(`Added ${returnedPerson.name} to phone-book with number ${returnedPerson.number}`)
+        }).catch(error => {
+          // this is the way to access the error message
+          console.log(error.response.data.error)
+          setMessage(`[ERROR] ${error.response.data.error}`)
         })
-      }
-      else{
-        setMessage(`[ERROR] Invalid  number`);
-      }
+     
       
 
   

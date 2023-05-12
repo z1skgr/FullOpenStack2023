@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.3.9-11",
+  "version": "0.3.19-22",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch db.json",
-    "build:ui": "rm -rf build && cd ../frontend/ && npm run build && cp -r build ../backend"
+    "build:ui": "rm -rf build && cd ../phonebook-frontend/ && npm run build && cp -r build ../phonebook-backend"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
