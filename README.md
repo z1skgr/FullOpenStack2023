@@ -5,7 +5,7 @@ Courses developed for Web Development from Helsinki University focusing on build
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-c3ow" colspan="4"><a href="https://fullstackopen.com/en/">Full Stack Open 2022</th>
+    <th class="tg-c3ow" colspan="4"><a href="https://fullstackopen.com/en/">Full Stack Open 2023</th>
   </tr>
 </thead>
 <tbody>
@@ -75,13 +75,13 @@ over several interactive courses and examples
 
 There are four main topics to study in this part. First thing is familiarization with React-library for browser display using functions. Javascript mechanisms and event handlers contribute to app development
 
-- [courseinfo](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/courseinfo) -  Course information web page with react basics
+- [courseinfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/courseinfo) -  Course information web page with react basics
 
-- [unicafe](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/unicafe) -  Statistic App demonstating event handling
+- [unicafe](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/unicafe) -  Statistic App demonstating event handling
 
-- [anecdotes](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/anecdotes) - Anecdote generator with complex components/functions
+- [anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/anecdotes) - Anecdote generator with complex components/functions
 
-[Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201)
+[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201)
 
 
 ## [Communication with React](https://fullstackopen.com/en/part2)
@@ -94,11 +94,11 @@ There are four main topics to study in this part. First thing is familiarization
 
 React code structured apps using styles and communication with a backend api (REST)
 
-- [courseinfo](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202/courseinfo) - Extension of [part 1](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%201/courseinfo) with modifications and new features
-- [phonebook](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202/phonebook) - Phonebook app with design mechanisms in React 
-- [countries](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202/countries) - React app displaying information from [REST countries API](https://restcountries.eu) 
+- [courseinfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/courseinfo) - Extension of [part 1](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/courseinfo) with modifications and new features
+- [phonebook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/phonebook) - Phonebook app with design mechanisms in React 
+- [countries](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/countries) - React app displaying information from [REST countries API](https://restcountries.eu) 
 
-[Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%202)
+[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202)
 
 ## [Programming a server with Node](https://fullstackopen.com/en/part3)
 
@@ -109,10 +109,10 @@ React code structured apps using styles and communication with a backend api (RE
 
 Simple REST API in Node.js using the Express library. The application's data is stored in a MongoDB database. The application is deployed to the internet.
 
-- [phonebook](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203/phonebook) - Full stack App Phonebook 
+- [phonebook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook) - Full stack App Phonebook 
 
 
-[Solutions](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%203)
+[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203)
 
 
 ## Exercises per part
