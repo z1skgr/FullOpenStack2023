@@ -116,7 +116,8 @@ invalid HTTP [call](https://github.com/z1skgr/FullOpenStack2022/tree/main/Part%2
 
 [http://localhost:3001/api/persons/12345](http://localhost:3001/api/persons/12345)
 
-
+* 3.22
+[Deploy on Railway](https://fullopenstack2022-production.up.railway.app/)
 
 ------------
 
@@ -135,7 +136,7 @@ Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it
 
 Open [http://localhost:3001/api/persons:ID](http://localhost:3001/api/persons) to view it in your browser. 
 `ID` is a number specifying the person for displaying.\
-For instance [link](http://localhost:3001/api/persons/1) If you have an opened tab, you can refresh the page.
+For instance [link](http://localhost:3001/api/persons/6426ed27e805657478dcebc8) If you have an opened tab, you can refresh the page.
 
 
 The page will reload when you make changes.\
@@ -154,7 +155,7 @@ Open [http://localhost:3001/api/info](http://localhost:3001/api/info) to view it
 If you have an opened tab, you can refresh the page.
 
 Open [http://localhost:3001/api/persons:ID](http://localhost:3001/api/persons) to view it in your browser. `ID` is a number specifying the person for displaying.\
-For instance [link](http://localhost:3001/api/persons/1) for displaying first person in the list. 
+For instance [link](http://localhost:3001/api/persons/6426ed27e805657478dcebc8) for displaying a person in the list. 
 If you have an opened tab, you can refresh the page.
 
 
