@@ -28,6 +28,18 @@ describe('part 4.8', () => {
 
 },100000)
 
+describe('part 4.9', () => {
+  test('blogs have id property named id instead of _id', async () => {
+    const response = await api.get('/api/blogs')
+
+    const ids = response.body.map((blog) => blog.id)
+
+    for (const id of ids) {
+      expect(id).toBeDefined()
+    }
+  },100000)
+})
+
 afterAll(() => {
   mongoose.connection.close()
 })
