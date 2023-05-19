@@ -17,6 +17,7 @@ const infoRouter = require('./controllers/info')
 const morgan = require('morgan')
 
 mongoose.set('strictQuery', false)
+require('express-async-errors')
 
 logger.info('connecting to', config.MONGODB_URI)
 

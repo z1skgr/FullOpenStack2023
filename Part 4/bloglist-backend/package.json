@@ -1,13 +1,13 @@
 {
   "name": "backend",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "",
   "main": "index.js",
   "module": "main.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest --verbose",
-    "dev": "nodemon index.js --ignore client",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -15,17 +15,22 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "eslint": "^8.40.0",
     "esm": "^3.2.25",
     "express": "^4.18.2",
+    "express-async-error": "^0.0.2",
+    "express-async-errors": "^3.1.1",
     "mongoose": "^7.1.1",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   },
   "devDependencies": {
     "jest": "^29.5.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "globalTeardown": "./tests/teardown.js"
   }
 }
