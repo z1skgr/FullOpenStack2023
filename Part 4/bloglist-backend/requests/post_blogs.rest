@@ -1,4 +1,3 @@
-###
 POST http://localhost:3003/api/blogs/ HTTP/1.1
 content-type: application/json
 
@@ -18,4 +17,15 @@ content-type: application/json
     "author":"Edsger W. Dijkstra",
     "url":"http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
     "likes":6
+    
+}
+
+POST http://localhost:3003/api/blogs/ HTTP/1.1
+content-type: application/json
+
+{
+    "title":"Go To Crete",
+    "author":"Maria Manarwlh",
+    "url":"https://psychcentral.com/health/why-am-i-so-sensitive",
+    "likes":1000
 }
