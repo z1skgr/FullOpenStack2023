@@ -3,6 +3,7 @@ const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
 
 const express = require('express')
+require('express-async-errors')
 const app = express()
 
 const cors = require('cors')
@@ -17,7 +18,7 @@ const infoRouter = require('./controllers/info')
 const morgan = require('morgan')
 
 mongoose.set('strictQuery', false)
-require('express-async-errors')
+
 
 logger.info('connecting to', config.MONGODB_URI)
 

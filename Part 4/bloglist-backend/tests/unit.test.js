@@ -2,7 +2,6 @@ const listHelper = require('../utils/list_helper')
 
 const emptyList = []
 
-
 const blogList = [
   {
     _id: '5a422aa71b54a676234d17f8',
@@ -72,123 +71,123 @@ const blogsList = [
   }
 ]
 
-describe('part 4.3', () => {
+describe('Test 4.3-4.7', () => {
 
-  test('dummy returns one', () => {
-    const result = listHelper.dummy(emptyList)
-    expect(result).toBe(1)
-  })
+  describe('part 4.3', () => {
 
-  test('dummy returns one, one element', () => {
-    const result = listHelper.dummy(blogList)
-    expect(result).toBe(1)
-  })
-
-  test('dummy returns one, many element', () => {
-    const result = listHelper.dummy(blogsList)
-    expect(result).toBe(1)
-  })
-
-})
-
-
-describe('part 4.4', () => {
-  test('No element In List equals zero likes', () => {
-
-    const resultNoBlogInList = listHelper.totalLikes(emptyList)
-    expect(resultNoBlogInList).toBe(0)
-  })
-
-  test('One element In List equals the likes of that element (blog)', () => {
-
-    const resultOneBlogInList = listHelper.totalLikes([blogList[0]])
-    expect(resultOneBlogInList).toBe(blogList[0].likes)
-  })
-
-  test('Many element In List equals the likes of all elements (blogs)', () => {
-
-    const resultManyBlogsInList = listHelper.totalLikes(blogsList)
-    expect(resultManyBlogsInList).toBe(92)
-  })
-
-})
-
-
-describe('part 4.5', () => {
-  test('No element In List equals no favorite', () => {
-    const resultEmptyBlogList = listHelper.favoriteBlog(emptyList)
-    expect(resultEmptyBlogList).toEqual({})
-  })
-
-  test('One element In List equals it is favorite (blog)', () => {
-    const maxLikes = listHelper.favoriteBlog([blogList[0]])
-    const favoriteBlog = blogList.find(blog => blog.likes === maxLikes)
-    expect(favoriteBlog).toEqual(blogList[0])
-  })
-
-  test('Many element In List equals someone is favourite', () => {
-    const maxLikes = listHelper.favoriteBlog(blogsList)
-    const favoriteBlog = blogsList.find(blog => blog.likes === maxLikes)
-    expect(favoriteBlog).toEqual({
-      _id: '5a422bc61b54a676234d17fc',
-      title: 'Go to Giannitsa',
-      author: 'Thodoris Grigoriadhs',
-      url: 'http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html',
-      likes: 22,
-      __v: 0,
+    test('dummy returns one empty list', () => {
+      const result = listHelper.dummy(emptyList)
+      expect(result).toBe(1)
     })
-  })
 
-})
-
-
-
-describe('part 4.6', () => {
-  test('No element In List equals no author', () => {
-    const resultEmptyBlogList = listHelper.mostBlogs(emptyList)
-    expect(resultEmptyBlogList).toEqual({})
-  })
-
-  test('One element In List equals the author of this blog (blog)', () => {
-    const blog = blogList[0]
-    const mostBlogs = listHelper.mostBlogs([blog])
-    expect(mostBlogs).toEqual({
-      author: blog.author,
-      blogs: 1
+    test('dummy returns one, one element', () => {
+      const result = listHelper.dummy(blogList)
+      expect(result).toBe(1)
     })
-  })
 
-  test('Calculate author with most blogs', () => {
-    const mostBlogs = listHelper.mostBlogs(blogsList)
-    expect(mostBlogs).toEqual({
-      author: 'Thalia Gk',
-      blogs: 2
+    test('dummy returns one, many element', () => {
+      const result = listHelper.dummy(blogsList)
+      expect(result).toBe(1)
     })
+
   })
 
-})
 
+  describe('part 4.4', () => {
+    test('No element In List equals zero likes', () => {
 
-
-describe('part 4.7', () => {
-  test('No elements means no likes', () => {
-    const resultEmptyBlogList = listHelper.mostLikes(emptyList)
-    expect(resultEmptyBlogList).toEqual({})
-  })
-
-  test('Element list equals the author with most likes', () => {
-    const result = listHelper.mostLikes(blogList)
-    expect(result).toEqual({
-      author: 'Edsger W. Dijkstra world',
-      likes: 5
+      const resultNoBlogInList = listHelper.totalLikes(emptyList)
+      expect(resultNoBlogInList).toBe(0)
     })
+
+    test('One element In List equals the likes of that element (blog)', () => {
+
+      const resultOneBlogInList = listHelper.totalLikes([blogList[0]])
+      expect(resultOneBlogInList).toBe(blogList[0].likes)
+    })
+
+    test('Many element In List equals the likes of all elements (blogs)', () => {
+
+      const resultManyBlogsInList = listHelper.totalLikes(blogsList)
+      expect(resultManyBlogsInList).toBe(92)
+    })
+
   })
 
-  test('Many blogs in list means calculate the author with most likes in blogs', () => {
-    const result = listHelper.mostLikes(blogsList)
-    expect(result).toEqual({
-      author: 'Thodoris Grigoriadhs',
-      likes: 22
+
+  describe('part 4.5', () => {
+    test('No element In List equals no favorite', () => {
+      const resultEmptyBlogList = listHelper.favoriteBlog(emptyList)
+      expect(resultEmptyBlogList).toEqual({})
+    })
+
+    test('One element In List equals it is favorite (blog)', () => {
+      const maxLikes = listHelper.favoriteBlog([blogList[0]])
+      const favoriteBlog = blogList.find(blog => blog.likes === maxLikes)
+      expect(favoriteBlog).toEqual(blogList[0])
+    })
+
+    test('Many element In List equals someone is favourite', () => {
+      const maxLikes = listHelper.favoriteBlog(blogsList)
+      const favoriteBlog = blogsList.find(blog => blog.likes === maxLikes)
+      expect(favoriteBlog).toEqual({
+        _id: '5a422bc61b54a676234d17fc',
+        title: 'Go to Giannitsa',
+        author: 'Thodoris Grigoriadhs',
+        url: 'http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html',
+        likes: 22,
+        __v: 0,
+      })
+    })
+
+  })
+
+  describe('part 4.6', () => {
+    test('No element In List equals no author', () => {
+      const resultEmptyBlogList = listHelper.mostBlogs(emptyList)
+      expect(resultEmptyBlogList).toEqual({})
+    })
+
+    test('One element In List equals the author of this blog (blog)', () => {
+      const blog = blogList[0]
+      const mostBlogs = listHelper.mostBlogs([blog])
+      expect(mostBlogs).toEqual({
+        author: blog.author,
+        blogs: 1
+      })
+    })
+
+    test('Calculate author with most blogs', () => {
+      const mostBlogs = listHelper.mostBlogs(blogsList)
+      expect(mostBlogs).toEqual({
+        author: 'Thalia Gk',
+        blogs: 2
+      })
+    })
+
+  })
+
+
+  describe('part 4.7', () => {
+    test('No elements means no likes', () => {
+      const resultEmptyBlogList = listHelper.mostLikes(emptyList)
+      expect(resultEmptyBlogList).toEqual({})
+    })
+
+    test('Element list equals the author with most likes', () => {
+      const result = listHelper.mostLikes(blogList)
+      expect(result).toEqual({
+        author: 'Edsger W. Dijkstra world',
+        likes: 5
+      })
+    })
+
+    test('Many blogs in list means calculate the author with most likes in blogs', () => {
+      const result = listHelper.mostLikes(blogsList)
+      expect(result).toEqual({
+        author: 'Thodoris Grigoriadhs',
+        likes: 22
+      })
     })
   })
 })

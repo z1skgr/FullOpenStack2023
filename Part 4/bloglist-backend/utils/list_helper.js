@@ -1,5 +1,6 @@
 // Requiring the lodash library
 const __ = require('lodash')
+
 /* eslint-disable no-unused-vars */
 const dummy = (blogs) => {
   return 1
@@ -24,7 +25,6 @@ const favoriteBlog = (blogs) => {
   return blogs.length === 0
     ? {} : blogs.reduce(reducer, blogs[0].likes)
 }
-
 
 const mostBlogs = (blogs) => {
   if (blogs.length === 0) return {}
@@ -56,9 +56,6 @@ const mostLikes = (blogs) => {
     return a.likes > b.likes ? a : b
   })
 }
-
-
-
 
 module.exports = {
   dummy,
