@@ -167,3 +167,28 @@ describe('part 4.6', () => {
   })
 
 })
+
+
+
+describe('part 4.7', () => {
+  test('No elements means no likes', () => {
+    const resultEmptyBlogList = listHelper.mostLikes(emptyList)
+    expect(resultEmptyBlogList).toEqual({})
+  })
+
+  test('Element list equals the author with most likes', () => {
+    const result = listHelper.mostLikes(blogList)
+    expect(result).toEqual({
+      author: 'Edsger W. Dijkstra world',
+      likes: 5
+    })
+  })
+
+  test('Many blogs in list means calculate the author with most likes in blogs', () => {
+    const result = listHelper.mostLikes(blogsList)
+    expect(result).toEqual({
+      author: 'Thodoris Grigoriadhs',
+      likes: 22
+    })
+  })
+})
