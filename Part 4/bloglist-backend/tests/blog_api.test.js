@@ -64,6 +64,26 @@ describe('part 4.10', () => {
 })
 
 
+describe('part 4.11', () => {
+  test('If the likes property is missing, it will default to 0 ', async () => {
+    const newBlog = {
+      title:'Technical University of Crete',
+      author:'Christos Ziskas',
+      url:'www.tuc.gr',
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    const addedBlog = await blogsAtEnd.find(blog => blog.title === 'Technical University of Crete')
+    expect(addedBlog.likes).toBe(0)
+  },100000)
+})
+
 afterAll(() => {
   mongoose.connection.close()
 })
