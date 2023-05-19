@@ -40,6 +40,30 @@ describe('part 4.9', () => {
   },100000)
 })
 
+describe('part 4.10', () => {
+  test('a valid blog can be added ', async () => {
+    const newBlog = {
+      title:'Technical University of Crete',
+      author:'Christos Ziskas',
+      url:'www.tuc.gr',
+      likes:12
+    }
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+    const BlogsAtEnd = await helper.blogsInDb()
+    expect(BlogsAtEnd).toHaveLength(helper.initialBlogs.length + 1)
+
+    const contents = BlogsAtEnd.map(n => n.title)
+    expect(contents).toContain(
+      'Technical University of Crete'
+    )
+  },100000)
+})
+
+
 afterAll(() => {
   mongoose.connection.close()
 })
