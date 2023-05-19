@@ -140,3 +140,30 @@ describe('part 4.5', () => {
   })
 
 })
+
+
+
+describe('part 4.6', () => {
+  test('No element In List equals no author', () => {
+    const resultEmptyBlogList = listHelper.mostBlogs(emptyList)
+    expect(resultEmptyBlogList).toEqual({})
+  })
+
+  test('One element In List equals the author of this blog (blog)', () => {
+    const blog = blogList[0]
+    const mostBlogs = listHelper.mostBlogs([blog])
+    expect(mostBlogs).toEqual({
+      author: blog.author,
+      blogs: 1
+    })
+  })
+
+  test('Calculate author with most blogs', () => {
+    const mostBlogs = listHelper.mostBlogs(blogsList)
+    expect(mostBlogs).toEqual({
+      author: 'Thalia Gk',
+      blogs: 2
+    })
+  })
+
+})

@@ -1,3 +1,5 @@
+// Requiring the lodash library
+const __ = require('lodash')
 /* eslint-disable no-unused-vars */
 const dummy = (blogs) => {
   return 1
@@ -24,9 +26,26 @@ const favoriteBlog = (blogs) => {
 }
 
 
+const mostBlogs = (blogs) => {
+  if (blogs.length === 0) return {}
+
+  const authorCount = __.countBy(blogs, 'author')
+
+  const topAuthor = Object.keys(authorCount).reduce((a, b) => {
+    return authorCount[a] > authorCount[b] ? a : b
+  })
+
+  return {
+    author: topAuthor,
+    blogs: authorCount[topAuthor],
+  }
+}
+
+
 
 module.exports = {
   dummy,
   totalLikes,
-  favoriteBlog
+  favoriteBlog,
+  mostBlogs
 }
