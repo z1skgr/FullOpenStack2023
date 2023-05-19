@@ -112,3 +112,31 @@ describe('part 4.4', () => {
   })
 
 })
+
+
+describe('part 4.5', () => {
+  test('No element In List equals no favorite', () => {
+    const resultEmptyBlogList = listHelper.favoriteBlog(emptyList)
+    expect(resultEmptyBlogList).toEqual({})
+  })
+
+  test('One element In List equals it is favorite (blog)', () => {
+    const maxLikes = listHelper.favoriteBlog([blogList[0]])
+    const favoriteBlog = blogList.find(blog => blog.likes === maxLikes)
+    expect(favoriteBlog).toEqual(blogList[0])
+  })
+
+  test('Many element In List equals someone is favourite', () => {
+    const maxLikes = listHelper.favoriteBlog(blogsList)
+    const favoriteBlog = blogsList.find(blog => blog.likes === maxLikes)
+    expect(favoriteBlog).toEqual({
+      _id: '5a422bc61b54a676234d17fc',
+      title: 'Go to Giannitsa',
+      author: 'Thodoris Grigoriadhs',
+      url: 'http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html',
+      likes: 22,
+      __v: 0,
+    })
+  })
+
+})
