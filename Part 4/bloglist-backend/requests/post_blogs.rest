@@ -27,3 +27,79 @@ POST http://localhost:3003/api/blogs/ HTTP/1.1 content-type: application/json
 "url":"https://psychcentral.com/health/why-am-i-so-sensitive", 
 "likes":1000
 }
+
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1
+content-type: application/json
+
+{
+    "title":"Go To Statement Considered Harmful",
+    "author":"Edsger W. Dijkstra",
+    "url":"http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+    "likes":8,
+    "user": "64655dad6ca410e80e82a8c9"
+}
+
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1
+content-type: application/json
+
+{
+    "title":"Go To World2",
+    "author":"Flame",
+    "url":"http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+    "likes":1200,
+    "user":"646510922aad463e5eabcb9a"
+}
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1 
+content-type: application/json
+
+{
+"title":"Go To Crete", 
+"author":"Maria Manarwlh", 
+"url":"https://psychcentral.com/health/why-am-i-so-sensitive", 
+"likes":1000,
+"user": "64655dad6ca410e80e82a8c9"
+}
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1 
+content-type: application/json
+
+{
+"title":"Go To Crete", 
+"author":"Maria Manarwlh", 
+"url":"https://psychcentral.com/health/why-am-i-so-sensitive", 
+"likes":1001,
+"user": "646510922aad463e5eabcb9a"
+}
+
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1 
+content-type: application/json
+
+{
+"title":"Go To Crete", 
+"author":"Maria Manarwlh", 
+"url":"https://psychcentral.com/health/why-am-i-so-sensitive", 
+"likes":1,
+"user": "6468ed2423f22b73598ca9fc"
+}
+
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1 
+content-type: application/json
+
+{
+"title":"Go To Crete", 
+"author":"Panos Sav", 
+"url":"https://psychcentral.com/health/why-am-i-so-sensitive", 
+"likes":1200,
+"user": "64655dad6ca410e80e82a8c9"
+}
