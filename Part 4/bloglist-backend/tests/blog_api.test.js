@@ -111,7 +111,7 @@ describe('Test 4.8-4.12', () => {
 
 describe('Part 4.13-4.14',  () =>  {
   describe('Part 4.13', () => {
-    test('status code 204 if id is valid when delete', async () => {
+    test('status code 204 -id valid delete', async () => {
       const blogsAtStart = await helper.blogsInDb()
       const blogToDelete = blogsAtStart[0]
 
@@ -127,7 +127,7 @@ describe('Part 4.13-4.14',  () =>  {
 
 
   describe('Part 4.14', () => {
-    test('succeeds with status 200 if id is valid when update', async () => {
+    test('succeeds with status 200 - id valid update', async () => {
       const blogsAtStart = await helper.blogsInDb()
       const blogToUpdate = blogsAtStart[0]
       //console.log(blogsAtStart[0])
