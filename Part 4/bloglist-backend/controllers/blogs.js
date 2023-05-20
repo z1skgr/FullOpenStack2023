@@ -32,7 +32,7 @@ blogRouter.delete('/:id', async (request, response) => {
 
 blogRouter.put('/:id', async (request, response) => {
   const { body } = request
-  const { id } = request.params
+  const { id } = request.paramsnpm
 
   const blog = {
     likes: body.likes,

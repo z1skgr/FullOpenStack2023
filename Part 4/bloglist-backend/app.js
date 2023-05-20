@@ -14,6 +14,7 @@ const mongoose = require('mongoose')
 
 const blogRouter = require('./controllers/blogs')
 const infoRouter = require('./controllers/info')
+const usersRouter = require('./controllers/users')
 
 const morgan = require('morgan')
 
@@ -42,7 +43,7 @@ app.use(express.json())
 
 app.use('/', infoRouter)
 app.use('/api/blogs', blogRouter)
-
+app.use('/api/users', usersRouter)
 
 app.use(middleware.errorHandler)
 app.use(
