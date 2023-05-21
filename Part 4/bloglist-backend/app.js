@@ -6,6 +6,7 @@ const express = require('express')
 require('express-async-errors')
 const app = express()
 
+
 const cors = require('cors')
 
 
@@ -45,7 +46,7 @@ app.use(express.json())
 app.use(middleware.tokenExtractor)
 
 app.use('/', infoRouter)
-app.use('/api/blogs', blogRouter)
+app.use('/api/blogs', middleware.userExtractor, blogRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 
