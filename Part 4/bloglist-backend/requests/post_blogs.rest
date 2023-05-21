@@ -110,11 +110,25 @@ content-type: application/json
 ###
 POST http://localhost:3003/api/blogs/ HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hcmlhIiwiaWQiOiI2NDZhNGNiYzViOThhOTBiNzkwMGY4YzkiLCJpYXQiOjE2ODQ2ODgyNjMsImV4cCI6MTY4NDY5MTg2M30.JjnKHsaD5lnoPGUiPxxwpZsmiRl6afh26WvHYZL0qQM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hcmlhIiwiaWQiOiI2NDZhNGNiYzViOThhOTBiNzkwMGY4YzkiLCJpYXQiOjE2ODQ3MDc5MjIsImV4cCI6MTY4NDcxMTUyMn0.4i7CpPYd7oJQJ5wirWuhuoEFK4KwPzVFaaQzBvfNWGY
 
 {
     "title":"Go To Katerini",
     "author":"Pan Zisk ",
+    "url":"http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+    "likes":1201,
+    "user":"646a4cbc5b98a90b7900f8c9"
+}
+
+
+###
+POST http://localhost:3003/api/blogs/ HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hcmlhIiwiaWQiOiI2NDZhNGNiYzViOThhOTBiNzkwMGY4YzkiLCJpYXQiOjE2ODQ3MDc5MjIsImV4cCI6MTY4NDcxMTUyMn0.4i7CpPYd7oJQJ5wirWuhuoEFK4KwPzVFaaQzBvfNWGY
+
+{
+    "title":"Go To Katerini",
+    "author":"Cz Zisk ",
     "url":"http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
     "likes":1201,
     "user":"646a4cbc5b98a90b7900f8c9"
