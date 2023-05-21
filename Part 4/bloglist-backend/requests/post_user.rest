@@ -18,7 +18,7 @@ content-type: application/json
 }
 
 
-###
+### 
 POST http://localhost:3003/api/users/ HTTP/1.1
 content-type: application/json
 
@@ -44,4 +44,15 @@ content-type: application/json
 {
     "username": "ml",
     "name": "SubUser"
+}
+
+
+###
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Maria",
+    "name": "Maria Man",
+    "password": "Maria"
 }
