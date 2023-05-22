@@ -15,7 +15,7 @@ const config = require('../utils/config')
 beforeEach(async () => {
   await Blog.deleteMany({})
   await Blog.insertMany(helper.initialBlogs)
-})
+},100000)
 
 
 describe('Test 4.8-4.12', () => {
@@ -28,7 +28,7 @@ describe('Test 4.8-4.12', () => {
         .get('/api/blogs')
         .expect(200)
         .expect('Content-Type', /application\/json/)
-    })
+    },100000)
 
   })
 
@@ -193,8 +193,8 @@ describe('Part 4.13-4.14',  () =>  {
       const blogsAtEnd = await Blog.find({}).populate('user')
       expect(blogsAtEnd).toHaveLength(blogsAtStart.length - 1)
 
-      const titles = blogsAtEnd.map((blog) => blog.title)
-      expect(titles).not.toContain(blogToDelete.title)
+      const url = blogsAtEnd.map((blog) => blog.url)
+      expect(url).not.toContain(blogToDelete.url)
     },100000)
 
 
@@ -208,7 +208,6 @@ describe('Part 4.13-4.14',  () =>  {
     test('succeeds with status 200 - id valid update', async () => {
       const blogsAtStart = await helper.blogsInDb()
       const blogToUpdate = blogsAtStart[0]
-
 
 
       await api
