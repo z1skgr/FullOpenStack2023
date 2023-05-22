@@ -5,7 +5,7 @@ const supertest = require('supertest')
 const app = require('../app')
 const api = supertest(app)
 
-
+const mongoose = require("mongoose");
 
 const helper = require('./test_helper')
 
@@ -15,7 +15,7 @@ describe('part 4.15-23', () => {
     await User.deleteMany({})
 
     const passwordHash = await bcrypt.hash('sekret', 10)
-    const user = new User({ username: 'root', passwordHash })
+    const user = new User({ username: 'Maria', passwordHash })
 
     await user.save()
   })
@@ -86,5 +86,28 @@ describe('part 4.15-23', () => {
     const usersAtEnd = await helper.usersInDb()
     expect(usersAtEnd).toHaveLength(usersAtStart.length)
   },100000)})
+
+  describe('Ext test', ()=>{
+    test('post statuscode 400 if username already taken', async () => {
+      const usersAtStart = await helper.usersInDb()
+
+      const newUser = {
+        username: 'Maria',
+        password: 'Maria'
+      }
+
+      const result = await api
+        .post('/api/users')
+        .send(newUser)
+        .expect(400)
+        .expect('Content-Type', /application\/json/)
+
+      expect(result.body.error).toContain('`username` to be unique')
+
+      const usersAtEnd = await helper.usersInDb()
+      expect(usersAtEnd).toHaveLength(usersAtStart.length)
+    })
+})
+
 
 })

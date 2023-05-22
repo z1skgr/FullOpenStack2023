@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.4.21-22",
+  "version": "0.4.23",
   "description": "",
   "main": "index.js",
   "module": "main.js",
@@ -26,6 +26,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.1",
     "mongoose-unique-validator": "^4.0.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   },

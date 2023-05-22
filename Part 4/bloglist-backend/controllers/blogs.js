@@ -72,7 +72,7 @@ blogRouter.delete('/:id', async (request, response) => {
 
 blogRouter.put('/:id', async (request, response) => {
   const { body } = request
-  const { id } = request.paramsnpm
+  const { id } = request.params
 
   const blog = {
     likes: body.likes,
@@ -85,6 +85,7 @@ blogRouter.put('/:id', async (request, response) => {
   } else {
     response.status(404).end()
   }
+
 })
 
 
