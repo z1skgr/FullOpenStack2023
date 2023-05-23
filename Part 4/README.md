@@ -11,6 +11,8 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 * [4.13-4.14](https://fullstackopen.com/en/part4/testing_the_backend#exercises-4-13-4-14)
 * [4.15-4.23](https://fullstackopen.com/en/part4/token_authentication#exercises-4-15-4-23)
 
+### [deploy](https://railway.app/dashboard)
+[https://fullopenstack2023-part4-production.up.railway.app](https://fullopenstack2023-part4-production.up.railway.app)
 
 
 
