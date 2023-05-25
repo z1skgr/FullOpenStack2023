@@ -1,6 +1,4 @@
-import Message from "./Message";
-
-const loginForm = (handleLogin, username, password, setUsername, setPassword, message) => (
+const loginForm = (handleLogin, username, password, setUsername, setPassword) => (
     <><form onSubmit={handleLogin}>
     <div>
       username
@@ -21,7 +19,7 @@ const loginForm = (handleLogin, username, password, setUsername, setPassword, me
 
     <button type="submit">login</button>
   </form>
-  <Message message={message} /></> 
+  </> 
   )
 
   

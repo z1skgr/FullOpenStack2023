@@ -66,18 +66,18 @@ const App = () => {
       ) 
       blogService.setToken(user.token)
       setUser(user)
-      setUsername('')
-      setPassword('')
       setMessage('Login approved')
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     } catch (exception) {
-      setMessage('ERROR, Wrong credentials')
+      setMessage('ERROR, Wrong username or password')
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     }
+    setUsername('')
+    setPassword('')
   }
 
 
@@ -103,8 +103,7 @@ const App = () => {
       await blogService.create(newBlog);
       setBlogs(blogs.concat(newBlog));
       
-      setForm({author:'',title:'',url:''})
-      setMessage(`Blog ${newBlog.title} was successfully added`)
+      setMessage(`A new Blog ${newBlog.title} by ${newBlog.author}`)
       setTimeout(() => {
         setMessage(null)
       }, 5000)
@@ -115,13 +114,15 @@ const App = () => {
       setTimeout(() => {
         setMessage(null)
       }, 5000)
-    }    
+    }  
+    setForm({author:'',title:'',url:''})  
   }
 
   
   return (
     <div>
       <h2>log in to application</h2>
+      <Message message={message} />
         {user === null ? null :
         <p>
           <span className="active-user">{user.name}</span> logged in
@@ -131,11 +132,11 @@ const App = () => {
 
       {user === null ?
       
-        loginForm(handleLogin, username, password, setUsername, setPassword, message)
-      : blogForm(addBlog,blogs,form.author,handleAuthor, form.title, handleTitle,form.url,handleUrl,message)
+        loginForm(handleLogin, username, password, setUsername, setPassword)
+      : blogForm(addBlog,blogs,form.author,handleAuthor, form.title, handleTitle,form.url,handleUrl)
 
     }
-   <Message message={message} /> 
+
     </div>
   )
 }

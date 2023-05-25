@@ -2,7 +2,7 @@ import React from 'react'
 import Blog from './Blog'
 
 
-const blogForm = (addBlog,blogs,author,handleAuthor, title, handleTitle,url,handleUrl,message) => {    
+const blogForm = (addBlog,blogs,author,handleAuthor, title, handleTitle,url,handleUrl) => {    
     return (<>  
     <form onSubmit={addBlog}>
           
