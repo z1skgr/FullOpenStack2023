@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
-import Blog from './components/Blog'
+
 import blogService from './services/blogs'
 import loginService from './services/login'
 import loginForm from "./components/LoginForm";
+import blogForm from "./components/BlogForm";
 import "./index.css"
 
 const App = () => {
@@ -13,6 +14,12 @@ const App = () => {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState(null)
 
+  const handleLogout = async (event) => {
+    event.preventDefault()
+    window.localStorage.clear()
+    setUser(null)
+  }
+
   const handleLogin = async (event) => {
     event.preventDefault()
     
@@ -20,6 +27,9 @@ const App = () => {
       const user = await loginService.login({
         username, password,
       })
+      window.localStorage.setItem(
+        'loggedBlogAppUser', JSON.stringify(user)
+      ) 
       blogService.setToken(user.token)
       setUser(user)
       setUsername('')
@@ -32,18 +42,6 @@ const App = () => {
     }
   }
 
-
-  
-  const blogForm = () => (
-    <form onSubmit={null}>
-          <p>
-            <span className="active-user">{user.name}</span> logged in
-          </p>
-      {blogs.map(blog =>
-        <Blog key={blog.id} blog={blog} />
-      )}
-    </form>  
-  )
 
 
   useEffect(() => {
@@ -58,8 +56,8 @@ const App = () => {
 
       {user === null ?
       
-        loginForm(handleLogin, username, password, setUsername, setPassword, message)
-      : blogForm()
+      loginForm(handleLogin, username, password, setUsername, setPassword, message)
+      : blogForm(handleLogout,user,blogs)
     }      
     </div>
   )
