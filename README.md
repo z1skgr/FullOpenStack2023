@@ -114,7 +114,7 @@ Simple REST API in Node.js using the Express library. The application's data is 
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203)
 
-## [Programming a server with Node](https://fullstackopen.com/en/part4)
+## [Testing Express servers, user administration](https://fullstackopen.com/en/part4)
 
 1. [Structure of backend application, introduction to testing](https://fullstackopen.com/en/part4/structure_of_backend_application_introduction_to_testing)  
 2. [Testing the backend](https://fullstackopen.com/en/part4/testing_the_backend)  
