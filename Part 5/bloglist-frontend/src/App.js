@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef   } from 'react'
 import React from 'react'
 
+import Blog from "./components/Blog";
 import blogService from './services/blogs'
 import loginService from './services/login'
-import loginForm from "./components/LoginForm";
-import blogForm from "./components/BlogForm";
+import LoginForm from "./components/LoginForm";
+
+import BlogForm from "./components/BlogForm";
 import "./index.css"
 import Message from "./components/Message";
+import Togglable from './components/Togglable';
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -19,8 +22,8 @@ const App = () => {
     title: '',
     url: '',
   });
+  const blogFormRef = useRef()
 
-  
   const handleAuthor = (event) =>{
     setForm({
       ...form,
@@ -51,7 +54,7 @@ const App = () => {
     window.localStorage.clear()
     setUser(null)
     setMessage(null)
-    setForm({author:'',title:'',url:''})
+    setForm('')
   }
 
   const handleLogin = async (event) => {
@@ -64,29 +67,30 @@ const App = () => {
       window.localStorage.setItem(
         'loggedBlogAppUser', JSON.stringify(user)
       ) 
+
       blogService.setToken(user.token)
       setUser(user)
+      setUsername('')
+      setPassword('')
       setMessage('Login approved')
       setTimeout(() => {
         setMessage(null)
       }, 5000)
+
     } catch (exception) {
       setMessage('ERROR, Wrong username or password')
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     }
-    setUsername('')
-    setPassword('')
   }
 
-
-
   useEffect(() => {
-    blogService.getAll().then(blogs  => {
+    blogService.getAll().then(blogs => {
       setBlogs( blogs ) }
     )  
   }, [])
+
 
 
   const addBlog = async (event) => {
@@ -96,13 +100,13 @@ const App = () => {
       author: form.author,
       url: form.url
     }
-    console.log(newBlog)
-
 
     try {
       await blogService.create(newBlog);
+      blogFormRef.current.toggleVisibility()
       setBlogs(blogs.concat(newBlog));
       
+      setForm({author:'',title:'',url:''})
       setMessage(`A new Blog ${newBlog.title} by ${newBlog.author}`)
       setTimeout(() => {
         setMessage(null)
@@ -114,29 +118,47 @@ const App = () => {
       setTimeout(() => {
         setMessage(null)
       }, 5000)
-    }  
-    setForm({author:'',title:'',url:''})  
+    }    
   }
 
+    
   
   return (
     <div>
       <h2>log in to application</h2>
+      
       <Message message={message} />
-        {user === null ? null :
-        <p>
-          <span className="active-user">{user.name}</span> logged in
+      {user === null ? null :<p>
+            <span className="active-user">{user.name}</span> logged in
             
             <button onClick={handleLogout} type="submit">logout</button>
-        </p>}
+          </p>}
 
       {user === null ?
       
-        loginForm(handleLogin, username, password, setUsername, setPassword)
-      : blogForm(addBlog,blogs,form.author,handleAuthor, form.title, handleTitle,form.url,handleUrl)
+        <LoginForm handleLogin={handleLogin} username={username} password={password} 
+        setUsername = {
+        e => setUsername(e.target.value)}
+        setPassword = {
+          e => setPassword(e.target.value)}
+        />
+      : 
 
-    }
+        <div> <Togglable buttonLabel="new blog" blogs={blogs} ref={blogFormRef}>
+        <BlogForm addBlog={addBlog} author={form.author} handleAuthor={handleAuthor}
+                title={form.title} handleTitle={handleTitle} url={form.url} handleUrl={handleUrl} />
+                
+        </Togglable>
+        <Blog blog={blogs} />
+        </div>
+     
+      
+          }
+               
+        
 
+    
+   
     </div>
   )
 }

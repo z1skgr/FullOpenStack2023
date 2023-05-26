@@ -1,45 +1,38 @@
 import React from 'react'
-import Blog from './Blog'
 
 
-const blogForm = (addBlog,blogs,author,handleAuthor, title, handleTitle,url,handleUrl) => {    
+const ΒlogForm = (props) => {    
     return (<>  
-    <form onSubmit={addBlog}>
-          
+    <form onSubmit={props.addBlog}>
           <h2>create new</h2>
           <div>
     Author
     <input
       type="author"
-      value={author}
+      value={props.author}
       name="author"
-      onChange={handleAuthor} />
+      onChange={props.handleAuthor} />
   </div>
   <div>
     Title
     <input
       type="title"
-      value={title}
+      value={props.title}
       name="title"
-      onChange={handleTitle} />
+      onChange={props.handleTitle} />
   </div>
   <div>
     Url
     <input
       type="url"
-      value={url}
+      value={props.url}
       name="url"
-      onChange={ handleUrl } />
+      onChange={ props.handleUrl } />
   </div>
   <button type="create">create</button>
-          
-          {blogs.map(blog =>
-            <Blog key={blog.id} blog={blog} />
-            )}
   </form>
-  
   </>  )
 }
 
 
-export default blogForm
+export default ΒlogForm
