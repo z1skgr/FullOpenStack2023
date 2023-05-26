@@ -21,6 +21,7 @@ const App = () => {
     author: '',
     title: '',
     url: '',
+    likes: 0
   });
   const blogFormRef = useRef()
 
@@ -91,6 +92,12 @@ const App = () => {
     )  
   }, [])
 
+  useEffect(() => {
+    blogService.getAll().then(blogs => {
+      setBlogs( blogs ) }
+    )  
+  }, [])
+
 
 
   const addBlog = async (event) => {
@@ -98,7 +105,9 @@ const App = () => {
     const newBlog = {
       title: form.title,
       author: form.author,
-      url: form.url
+      url: form.url,
+      likes: 0,
+      
     }
 
     try {
@@ -120,6 +129,23 @@ const App = () => {
       }, 5000)
     }    
   }
+
+  const updateBlog = async (id, updBlog) => {
+    try {
+      const response = await blogService.update(id, updBlog);
+      setMessage(`Update likes on blog ${updBlog.title}`);
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
+      setBlogs(
+        blogs.map((blog) => (blog.id === response.id ? response : blog))
+      );
+    } catch (exception) {
+      setMessage("ERROR" + exception.response.data.error);
+    }
+  }
+
+
 
     
   
@@ -149,7 +175,20 @@ const App = () => {
                 title={form.title} handleTitle={handleTitle} url={form.url} handleUrl={handleUrl} />
                 
         </Togglable>
-        <Blog blog={blogs} />
+       
+
+          {
+            <div>
+            <table border="3"> 
+              <tr><th>Title</th><th><tr>Author</tr><tr>URL</tr>  <tr>Likes</tr></th>
+              </tr>
+              {blogs.map((blog) => (
+              <Blog key={blog.id} blog={blog} updatedBlog={updateBlog} />
+              ))}
+             
+            </table>
+          </div>  
+          }
         </div>
      
       
