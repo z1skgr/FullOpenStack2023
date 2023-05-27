@@ -182,7 +182,7 @@ const App = () => {
             <table border="3"> 
               <tr><th>Title</th><th><tr>Author</tr><tr>URL</tr>  <tr>Likes</tr></th>
               </tr>
-              {blogs.map((blog) => (
+              {blogs.sort((a,b)=> a.likes - b.likes).map((blog) => (
               <Blog key={blog.id} blog={blog} updatedBlog={updateBlog} />
               ))}
              
