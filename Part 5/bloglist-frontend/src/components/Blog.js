@@ -1,10 +1,13 @@
 import { useState } from "react";
+import blogService from "../services/blogs";
 
-const Blog = ({blog,updatedBlog}) => {
+const Blog = ({blog, updatedBlog, deleteBlog}) => {
   const [visible, setVisible] = useState(false);
   const toggleVisibility = () => {
     setVisible(!visible);
   };
+
+  const userId = blogService.getUserId();
 
   const blogStyle = {
     paddingTop: 10,
@@ -15,12 +18,16 @@ const Blog = ({blog,updatedBlog}) => {
   }
 
   const upLikes = () =>{
-    console.log('Add a like')
+    //console.log('Add a like')
     const upBlog = {
       ...blog,
       likes:blog.likes+1
     }
     updatedBlog(blog.id,upBlog)
+  }
+
+  const removeBlog = () =>{
+    deleteBlog(blog)
   }
 
   
@@ -32,6 +39,9 @@ const Blog = ({blog,updatedBlog}) => {
               <><div>{blog.author}</div>
               <div>{blog.url}</div>
               <div>{blog.likes}<button onClick={upLikes}>like</button></div>
+              <div>
+              {(blog.user === userId || blog.user === userId ) &&(<button onClick={removeBlog}>delete</button>)}
+                </div>
               </>
             ):null}
             

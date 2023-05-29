@@ -4,6 +4,8 @@ import React from 'react'
 import Blog from "./components/Blog";
 import blogService from './services/blogs'
 import loginService from './services/login'
+
+
 import LoginForm from "./components/LoginForm";
 
 import BlogForm from "./components/BlogForm";
@@ -24,6 +26,7 @@ const App = () => {
     likes: 0
   });
   const blogFormRef = useRef()
+
 
   const handleAuthor = (event) =>{
     setForm({
@@ -95,7 +98,7 @@ const App = () => {
   useEffect(() => {
     blogService.getAll().then(blogs => {
       setBlogs( blogs ) }
-    )  
+    )   
   }, [])
 
 
@@ -106,15 +109,17 @@ const App = () => {
       title: form.title,
       author: form.author,
       url: form.url,
-      likes: 0,
+      likes: 0
       
     }
 
     try {
-      await blogService.create(newBlog);
-      blogFormRef.current.toggleVisibility()
-      setBlogs(blogs.concat(newBlog));
+      const postOne = await blogService.create(newBlog)
       
+      blogFormRef.current.toggleVisibility()
+      setBlogs(blogs.concat(postOne));
+      
+      //console.log(user)
       setForm({author:'',title:'',url:''})
       setMessage(`A new Blog ${newBlog.title} by ${newBlog.author}`)
       setTimeout(() => {
@@ -143,6 +148,28 @@ const App = () => {
     } catch (exception) {
       setMessage("ERROR" + exception.response.data.error);
     }
+  }
+
+  const deleteBlog = async (blog) =>{
+    try{
+        if (window.confirm(`Remove blog ${blog.title} by ${blog.author}`)) {
+          
+        await blogService.remove(blog.id);
+        setMessage(`${blog.title} Blog deleted`);
+        setBlogs(blogs.filter(b => b.id !== blog.id))
+        setTimeout(() => {
+          setMessage(null)
+        }, 5000)
+
+      }
+      
+    }catch(exception){
+      setMessage("ERROR" + exception.response.data.error);
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
+    }
+
   }
 
 
@@ -183,7 +210,7 @@ const App = () => {
               <tr><th>Title</th><th><tr>Author</tr><tr>URL</tr>  <tr>Likes</tr></th>
               </tr>
               {blogs.sort((a,b)=> a.likes - b.likes).map((blog) => (
-              <Blog key={blog.id} blog={blog} updatedBlog={updateBlog} />
+              <Blog key={blog.id} blog={blog} updatedBlog={updateBlog} deleteBlog={deleteBlog} />
               ))}
              
             </table>

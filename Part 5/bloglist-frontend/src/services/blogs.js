@@ -1,11 +1,15 @@
 import axios from 'axios'
+import jwt from "jwt-decode";
 const baseUrl = '/api/blogs'
-
 let token = null
 
 const setToken = newToken => {
   token = `Bearer ${newToken}`
 }
+
+const getUserId = () => {
+  return token ? jwt(token).id : false;
+};
 
 const getAll = () => {
   const request = axios.get(baseUrl)
@@ -27,5 +31,15 @@ const update = async(id, newObj) => {
 
 }
 
+const remove = async(id) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const request = await axios.delete(`${ baseUrl }/${id}`, config)
+  return request.data
+
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, create, update, setToken }
+export default { getAll, create, update, setToken, remove, getUserId  }
