@@ -1,13 +1,13 @@
-import { useState } from "react";
-import blogService from "../services/blogs";
+import { useState } from 'react'
+import blogService from '../services/blogs'
 
-const Blog = ({blog, updatedBlog, deleteBlog}) => {
-  const [visible, setVisible] = useState(false);
+const Blog = ({ blog, updatedBlog, deleteBlog }) => {
+  const [visible, setVisible] = useState(false)
   const toggleVisibility = () => {
-    setVisible(!visible);
-  };
+    setVisible(!visible)
+  }
 
-  const userId = blogService.getUserId();
+  const userId = blogService.getUserId()
 
   const blogStyle = {
     paddingTop: 10,
@@ -17,7 +17,7 @@ const Blog = ({blog, updatedBlog, deleteBlog}) => {
     marginBottom: 5
   }
 
-  const upLikes = () =>{
+  const upLikes = () => {
     //console.log('Add a like')
     const upBlog = {
       ...blog,
@@ -26,35 +26,38 @@ const Blog = ({blog, updatedBlog, deleteBlog}) => {
     updatedBlog(blog.id,upBlog)
   }
 
-  const removeBlog = () =>{
+  const removeBlog = () => {
     deleteBlog(blog)
   }
 
-  
+
   return(
-        
-        <tr key={blog.id} style={blogStyle}>
-            <td>{blog.title} <button onClick={toggleVisibility}>Show</button></td>
-            {visible ? (
-              <><div>{blog.author}</div>
-              <div>{blog.url}</div>
-              <div>{blog.likes}<button onClick={upLikes}>like</button></div>
-              <div>
-              {(blog.user === userId || blog.user === userId ) &&(<button onClick={removeBlog}>delete</button>)}
-                </div>
-              </>
-            ):null}
-            
-            
-            
-          </tr>
-       
-    
+
+    <tr key={blog.id} style={blogStyle}>
+      <th>{blog.title} <button onClick={toggleVisibility}>Show</button></th>
+      {visible ? (
+
+        <><th>{blog.author}</th>
+          <th>{blog.url}</th>
+          <th>{blog.likes}<button onClick={upLikes}>like</button></th>
+          <th>
+            {(blog.user === userId) &&(<button onClick={removeBlog}>delete</button>)}
+          </th>
+        </>
+      ):null}
+
+
+
+    </tr>
+
+
   )
 }
 
 
-  
+
+
+
 
 
 export default Blog

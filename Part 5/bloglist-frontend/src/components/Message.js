@@ -1,8 +1,8 @@
-const Message = ({ message }) =>{
+const Message = ({ message }) => {
 
-  if(message === null) return null;
+  if(message === null) return null
 
-   if (message.includes('ERROR')){
+  if (message.includes('ERROR')){
     return (
       <span  className="error-message">
         {message}
@@ -15,7 +15,7 @@ const Message = ({ message }) =>{
       </span>
     )
   }
-  
+
 }
-  
+
 export default Message
