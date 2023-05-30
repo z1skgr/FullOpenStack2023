@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import React from 'react'
 import blogService from '../services/blogs'
 
 const Blog = ({ blog, updatedBlog, deleteBlog }) => {
@@ -34,10 +35,10 @@ const Blog = ({ blog, updatedBlog, deleteBlog }) => {
   return(
 
     <tr key={blog.id} style={blogStyle}>
-      <th>{blog.title} <button onClick={toggleVisibility}>Show</button></th>
+      <th>{blog.title} / {blog.author} <button onClick={toggleVisibility}>Show</button></th>
       {visible ? (
 
-        <><th>{blog.author}</th>
+        <>
           <th>{blog.url}</th>
           <th>{blog.likes}<button onClick={upLikes}>like</button></th>
           <th>

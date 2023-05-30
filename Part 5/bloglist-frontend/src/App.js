@@ -208,7 +208,7 @@ const App = () => {
           <div>
             <table border="5">
               <thead>
-                <tr><th>Title</th><th>Author</th><th>URL</th><th>Likes</th><th>Delete</th>
+                <tr><th>Title / Author</th><th>URL</th><th>Likes</th><th>Delete</th>
                 </tr>
 
                 {blogs.sort((a,b) => a.likes - b.likes).map((blog) => (
