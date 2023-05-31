@@ -7,8 +7,8 @@ import loginService from './services/login'
 
 
 import LoginForm from './components/LoginForm'
-
 import BlogForm from './components/BlogForm'
+
 import './index.css'
 import Message from './components/Message'
 import Togglable from './components/Togglable'
@@ -52,7 +52,6 @@ const App = () => {
 
   }
 
-
   const handleLogout = async (event) => {
     event.preventDefault()
     window.localStorage.clear()
@@ -63,7 +62,6 @@ const App = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault()
-
     try {
       const user = await loginService.login({
         username, password,
@@ -71,7 +69,6 @@ const App = () => {
       window.localStorage.setItem(
         'loggedBlogAppUser', JSON.stringify(user)
       )
-
       blogService.setToken(user.token)
       setUser(user)
       setUsername('')
@@ -171,10 +168,6 @@ const App = () => {
     }
 
   }
-
-
-
-
 
   return (
     <div>

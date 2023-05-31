@@ -15,7 +15,6 @@ const Message = ({ message }) => {
       </span>
     )
   }
-
 }
 
 export default Message

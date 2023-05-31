@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const ΒlogForm = (props) => {
   return (<>
     <form onSubmit={props.addBlog}>
@@ -33,6 +32,5 @@ const ΒlogForm = (props) => {
     </form>
   </>  )
 }
-
 
 export default ΒlogForm
