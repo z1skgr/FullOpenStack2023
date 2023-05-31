@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 // eslint-disable-next-line no-unused-vars
@@ -13,11 +12,17 @@ const blog = {
   url:'https://tuc.gr/',
   likes:7
 }
-const mockUpdateBlog = jest.fn()
-const mockDeleteBlog = jest.fn()
+let mockUpdateBlog = jest.fn()
+let mockDeleteBlog = jest.fn()
+let user = userEvent.setup()
+
 
 beforeEach(() => {
+  mockUpdateBlog = jest.fn()
+  mockDeleteBlog = jest.fn()
+  user = userEvent.setup()
   render(<Blog blog={blog} updatedBlog={mockUpdateBlog} deleteBlog={mockDeleteBlog} />)
+
 })
 
 
@@ -32,8 +37,8 @@ describe('part5.13', () => {
 
 describe('part 5.14', () => {
   test('URL, likes details after button clicked', async () => {
-    const user = userEvent.setup()
-    await user.click(document.querySelector("button"))
+
+    await user.click(document.querySelector('button'))
 
     //fireEvent.click(document.querySelector("button"));
     const elementUrl = screen.getByText('https://tuc.gr/')
@@ -43,3 +48,18 @@ describe('part 5.14', () => {
   })
 
 })
+
+describe('part 5.15', () => {
+  test('like button is clicked twice, the event handler is called twice.', async () => {
+    await user.click(document.querySelector('button'))
+
+    const likeButton = screen.getByText('like')
+    await user.click(likeButton)
+    expect(mockUpdateBlog.mock.calls).toHaveLength(1)
+    await user.click(likeButton)
+    expect(mockUpdateBlog.mock.calls).toHaveLength(2)
+  })
+
+})
+
+
