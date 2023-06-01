@@ -1,0 +1,58 @@
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Playboy",
+    "name": "Superuser",
+    "password": "moda"
+}
+
+###
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mluukkai",
+    "name": "salainen",
+    "password": "mluukkai"
+}
+
+
+### 
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ml",
+    "name": "SubUser",
+    "password": "sk"
+}
+
+###
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "SubUser",
+    "password": "sk"
+}
+
+###
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ml",
+    "name": "SubUser"
+}
+
+
+###
+POST http://localhost:3003/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Maria",
+    "name": "Maria Man",
+    "password": "Maria"
+}

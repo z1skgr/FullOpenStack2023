@@ -15,6 +15,7 @@ const ΒlogForm = (props) => {
       <div>
     Title
         <input
+          id='title'
           type="title"
           value={props.title}
           name="title"
@@ -23,12 +24,13 @@ const ΒlogForm = (props) => {
       <div>
     Url
         <input
+          id='id'
           type="url"
           value={props.url}
           name="url"
           onChange={ props.handleUrl } />
       </div>
-      <button type="create">create</button>
+      <button id='create-button' type="create">create</button>
     </form>
   </>  )
 }
