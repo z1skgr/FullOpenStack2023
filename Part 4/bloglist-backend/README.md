@@ -26,7 +26,7 @@ Lodash makes JavaScript easier by taking the hassle out of working with arrays, 
 
 * [Jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) generates json web tokens, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
 
-On terminal [^1]
+On terminal[^1]
 ```
 npm install --save-dev jest 
 npm install --save-dev cross-env 
@@ -233,6 +233,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-[^1] If you are deploying this application to Fly.io/Render, keep in mind that if cross-env is saved as a development dependency, it would cause an application error on your web server. To fix this, change cross-env to a production dependency by running this in the command line
+[^1]: If you are deploying this application to Fly.io/Render, keep in mind that if cross-env is saved as a development dependency, it would cause an application error on your web server. To fix this, change cross-env to a production dependency by running this in the command line
 
 
