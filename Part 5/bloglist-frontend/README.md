@@ -8,6 +8,7 @@ The whole concept of this exercise is implement functionality on the client side
 * [http Service](https://www.freecodecamp.org/news/how-to-use-axios-with-react/) using [axios API](https://www.npmjs.com/package/axios)
 
 
+
 ## Setup
 * Config initial repository from [full stack open part 5](https://github.com/fullstack-hy2020/bloglist-frontend) 
 
@@ -18,7 +19,7 @@ cd bloglist-frontend   // go to cloned repository
 rm -rf .git
 ```
 
-* Start backend from [part 4]https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%204 in separate terminal tab along with [initial repository](https://github.com/fullstack-hy2020/bloglist-frontend) 
+* Start backend from [part 4](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%204) from [part 5](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%205) in separate terminal tab along with [initial repository](https://github.com/fullstack-hy2020/bloglist-frontend) 
 On terminal
 ```
 npm start
@@ -56,23 +57,60 @@ Inside backend `package.json`, add to `scripts`
 * "start:test": "NODE_ENV=test node index.js"
 
 Inside frontend `package.json`, add to `scripts`
-* "cypress:open": "cypress open"
+* "cypress:open": "cypress open",
+* "test:e2e": "cypress run"
 
 
-
-## Deploy on the Internet
-In our implementation, we decide to go with [Railway](https://railway.app) as our hosting tool. [Here](https://docs.railway.app/develop/projects), you can start exploring Railway.
 
 ## MongoDB
 To store our data  indefinitely, we exploit some data storage services. To fulfil the requirements of these project, we select [MongoDB](https://www.mongodb.com) as database provider due to his lower complexity compared to a relational database and more specifically [MongoDB Atlas](https://www.mongodb.com/atlas/database). Link [here](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#mongo-db) to follow guide.
 
 ## CyPress
- [Cypress](https://www.cypress.io) is built specifically for JavaScript frontend developers, and you can use it to start writing tests quickly without needing to add third-party dependencies or packages. This is a benefit missing from other tools like [Selenium](https://www.selenium.dev). 
+ [Cypress](https://www.cypress.io) is built specifically for JavaScript frontend developers, and you can use it to start writing tests quickly without needing to add third-party dependencies or packages. This is a benefit missing from other tools like [Selenium](https://www.selenium.dev). For configuration check [here](https://docs.cypress.io/guides/references/configuration).
 
-## Front-end
 
+
+## Tests
+[Integrated Test](https://fullstackopen.com/en/part5/testing_react_apps#exercises-5-13-5-16)
+
+``` $env:CI=$true; ```
+  ```  npm test```
+------------
+* 5.13 Render title/author
+------------
+* 5.14 Render blog details
+------------
+* 5.15 Update likes
+------------
+* 5.16: New blog
+------------
+
+[Cypress](https://fullstackopen.com/en/part5/end_to_end_testing)
+
+```
+npm run cypress:open
+npm run test:e2e 
+```
+------------
+* 5.17 Displays the login form.
+------------
+* 5.18 Login attempts.
+------------
+* 5.19 logged-in user create a blog. 
+------------
+* 5.20 Like a blog.
+------------
+* 5.21 Delete a blog.
+------------
+* 5.22 Creator delete a blog.
+------------
+* 5.23 Like-based Order blogs 
+------------
+
+## Application 
 Addresses for each application. 
-Front End
+
+Front End 
 ------------
 * http://localhost:3000
 ------------
@@ -80,9 +118,6 @@ Backend End
 ------------
 * http://localhost:3003
 ------------
-[Deploy on Railway](https://fullopenstack2023-production.up.railway.app/)
-
-
 
 ## Available Scripts
 
@@ -90,17 +125,22 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode as `localhost`\
-Open [http://localhost:3003](http://localhost:3003) to view it in your browser.
-Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser.\ 
-Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. \
+Runs the app in the development mode as `localhost`
 
-`ID` is a number specifying the blog for displaying.\
-For instance [link](http://localhost:3003/api/persons/6467b285831318a4124eb21e) If you have an opened tab, you can refresh the page.  \
+Open [http://localhost:3003](http://localhost:3003) to view it in your browser. 
 
-Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. \
-Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. \
-`ID` is a number specifying the blog for displaying.\
+Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser. 
+
+Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. 
+
+`ID` is a number specifying the blog for displaying.
+For instance [link](http://localhost:3003/api/persons/6467b285831318a4124eb21e) If you have an opened tab, you can refresh the page.  
+
+Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. 
+
+Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser.
+
+`ID` is a number specifying the blog for displaying.
 
 
 The page will reload when you make changes.\
@@ -109,13 +149,18 @@ You may also see any lint errors in the console.
 
 ### `npm run dev`
 
-Runs the server in the development mode as `localhost.\
-Open [http://localhost:3003](http://localhost:3003) to view it in your browser. If you have an opened tab, you can refresh the page.\
-Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser. \
-Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. \
-`ID` is a number specifying the blog for displaying.\
-Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. \
-Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. \
+Runs the server in the development mode as `localhost.
+Open [http://localhost:3003](http://localhost:3003) to view it in your browser. If you have an opened tab, you can refresh the page.
+
+Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser. 
+
+Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. 
+
+`ID` is a number specifying the blog for displaying.
+Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. 
+
+Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. 
+
 `ID` is a number specifying the blog for displaying.
 
 If you have an opened tab, you can refresh the page.
@@ -126,6 +171,8 @@ Prerequisites, you launch backend and frontend in test mode (you modify backend 
 Launches cypress in the interactive watch mode. See [Package](#Package) \
 See the section about [cypress tests](https://www.cypress.io/app/#browser_testing) for more information.
 
+### `npm run test:e2e`
+Launch test runner from the command line. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm test`
 
