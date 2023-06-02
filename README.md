@@ -6,6 +6,8 @@ This project was bootstrapped with [git](https://git-scm.com/docs/git-clone).
 The whole concept of this exercise is implement functionality on the client side. 
 
 * [http Service](https://www.freecodecamp.org/news/how-to-use-axios-with-react/) using [axios API](https://www.npmjs.com/package/axios)
+* [Integrated Tests](https://medium.com/expedia-group-tech/integration-testing-in-react-21f92a55a894) for advanced unit testing.
+* [Visual Tests](https://storybook.js.org/docs/react/writing-tests/visual-testing) using [cypress.](https://www.cypress.io/)
 
 
 ## Setup
@@ -67,9 +69,10 @@ To store our data  indefinitely, we exploit some data storage services. To fulfi
 ## CyPress
  [Cypress](https://www.cypress.io) is built specifically for JavaScript frontend developers, and you can use it to start writing tests quickly without needing to add third-party dependencies or packages. This is a benefit missing from other tools like [Selenium](https://www.selenium.dev). 
 
-## Front-end
+## Application
 
 Addresses for each application. 
+
 Front End
 ------------
 * http://localhost:3000
@@ -114,45 +117,57 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode as `localhost`\
+Runs the app in the development mode as `localhost`
+
 Open [http://localhost:3003](http://localhost:3003) to view it in your browser.
-Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser.\ 
-Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. \
 
-`ID` is a number specifying the blog for displaying.\
-For instance [link](http://localhost:3003/api/persons/6467b285831318a4124eb21e) If you have an opened tab, you can refresh the page.  \
+Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser.
 
-Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. \
-Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. \
-`ID` is a number specifying the blog for displaying.\
+Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. 
 
 
-The page will reload when you make changes.\
+`ID` is a number specifying the blog for displaying.
+For instance [link](http://localhost:3003/api/persons/6467b285831318a4124eb21e) If you have an opened tab, you can refresh the page.  
+
+Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. 
+
+Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. 
+
+`ID` is a number specifying the blog for displaying.
+
+
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
 
 ### `npm run dev`
 
-Runs the server in the development mode as `localhost.\
-Open [http://localhost:3003](http://localhost:3003) to view it in your browser. If you have an opened tab, you can refresh the page.\
-Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser. \
-Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser. \
-`ID` is a number specifying the blog for displaying.\
-Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. \
-Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. \
+Runs the server in the development mode as `localhost`.
+
+Open [http://localhost:3003](http://localhost:3003) to view it in your browser. If you have an opened tab, you can refresh the page.
+
+Open [http://localhost:3003/api/blogs](http://localhost:3003/api/blogs) to view it in your browser. 
+
+Open [http://localhost:3003/api/blogs:ID](http://localhost:3003/api/blogs) to view it in your browser.
+
+
 `ID` is a number specifying the blog for displaying.
 
+Open [http://localhost:3003/api/users](http://localhost:3003/api/users) to view it in your browser. 
+
+Open [http://localhost:3003/api/users:ID](http://localhost:3003/api/users) to view it in your browser. 
+
+`ID` is a number specifying the blog for displaying.
 If you have an opened tab, you can refresh the page.
 
 
 ### `npm run cypress:open`
 Prerequisites, you launch backend and frontend in test mode (you modify backend to be executed in test-environment).
-Launches cypress in the interactive watch mode. See [Package](#Package) \
+Launches cypress in the interactive watch mode. See [Package](https://github.com/z1skgr/FullOpenStack2023/edit/main/README.md#package).
 See the section about [cypress tests](https://www.cypress.io/app/#browser_testing) for more information.
 
 
-### `npm test`
-
+### `npm run test:e2e test`
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 Except `npm test` command, we can run commands to test what we need.
