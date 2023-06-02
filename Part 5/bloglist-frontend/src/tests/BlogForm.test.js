@@ -14,21 +14,14 @@ const blog = {
 }
 
 let mockfunc_1 = jest.fn()
-let mockfunc_2 = jest.fn()
-let mockfunc_3 = jest.fn()
-let mockfunc_4 = jest.fn()
 let user = userEvent.setup()
 
 
 beforeEach(() => {
 
   mockfunc_1 = jest.fn()
-  mockfunc_2 = jest.fn()
-  mockfunc_3 = jest.fn()
-  mockfunc_4 = jest.fn()
   user = userEvent.setup()
-  render(<BlogForm addBlog={mockfunc_1}  handleAuthor={mockfunc_2}
-    handleTitle={mockfunc_3}  handleUrl={mockfunc_4} />)
+  render(<BlogForm createBlog={mockfunc_1}  />)
 
 })
 
@@ -47,6 +40,8 @@ describe('part5.16', () => {
 
     expect(mockfunc_1.mock.calls).toHaveLength(1)
     console.log(mockfunc_1.mock.calls[0])
+    expect(mockfunc_1.mock.calls[0][0].title).toBe('TUC')
+
     //fireEvent.click(document.querySelector("button"));
 
 

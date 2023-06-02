@@ -35,14 +35,14 @@ const Blog = ({ blog, updatedBlog, deleteBlog }) => {
   return(
 
     <tr key={blog.id} style={blogStyle}>
-      <th>{blog.title} / {blog.author} <button onClick={toggleVisibility}>Show</button></th>
+      <th>{blog.title} / {blog.author} <button id={'show_button'} onClick={toggleVisibility}>Show</button></th>
       {visible ? (
 
         <>
           <th>{blog.url}</th>
-          <th>{blog.likes}<button onClick={upLikes}>like</button></th>
+          <th>{blog.likes}<button id={'like_button'} onClick={upLikes}>like</button></th>
           <th>
-            {(blog.user === userId) &&(<button onClick={removeBlog}>delete</button>)}
+            {(blog.user === userId) &&(<button id={'delete_button'} onClick={removeBlog}>delete</button>)}
           </th>
         </>
       ):null}

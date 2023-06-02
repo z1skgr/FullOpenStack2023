@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-undef
-const { defineConfig } = require('cypress')
+const { defineConfig } = require("cypress");
 
 // eslint-disable-next-line no-undef
 module.exports = defineConfig({
@@ -9,4 +9,11 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-})
+
+  component: {
+    devServer: {
+      framework: "create-react-app",
+      bundler: "webpack",
+    },
+  },
+});

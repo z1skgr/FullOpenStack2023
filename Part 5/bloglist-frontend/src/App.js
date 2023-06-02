@@ -19,46 +19,15 @@ const App = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState(null)
-  const [form, setForm] = useState({
-    author: '',
-    title: '',
-    url: '',
-    likes: 0
-  })
-  const blogFormRef = useRef()
-
-
-  const handleAuthor = (event) => {
-    setForm({
-      ...form,
-      author: event.target.value
-    })
-
-  }
-
-  const handleTitle = (event) => {
-    setForm({
-      ...form,
-      title: event.target.value
-    })
-
-  }
-
-  const handleUrl = (event) => {
-    setForm({
-      ...form,
-      url: event.target.value
-    })
-
-  }
 
   const handleLogout = async (event) => {
     event.preventDefault()
     window.localStorage.clear()
     setUser(null)
     setMessage(null)
-    setForm('')
   }
+
+  const blogFormRef = useRef()
 
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -100,31 +69,19 @@ const App = () => {
 
 
 
-  const addBlog = async (event) => {
-    event.preventDefault()
-    const newBlog = {
-      title: form.title,
-      author: form.author,
-      url: form.url,
-      likes: 0
-
-    }
-
+  const createBlog = async (newBlog) => {
     try {
       const postOne = await blogService.create(newBlog)
-
       blogFormRef.current.toggleVisibility()
       setBlogs(blogs.concat(postOne))
 
-      //console.log(user)
-      setForm({ author:'',title:'',url:'' })
       setMessage(`A new Blog ${newBlog.title} by ${newBlog.author}`)
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     } catch(exception) {
       setMessage(
-        `ERROR, Cannot add blog ${newBlog.title}`
+        `ERROR, Cannot add blog ${newBlog.title} ${exception.response.data.error}`
       )
       setTimeout(() => {
         setMessage(null)
@@ -191,8 +148,7 @@ const App = () => {
         :
 
         <div> <Togglable buttonLabel="new blog" blogs={blogs} ref={blogFormRef}>
-          <BlogForm addBlog={addBlog} author={form.author} handleAuthor={handleAuthor}
-            title={form.title} handleTitle={handleTitle} url={form.url} handleUrl={handleUrl} />
+          <BlogForm createBlog={createBlog} />
 
         </Togglable>
 
