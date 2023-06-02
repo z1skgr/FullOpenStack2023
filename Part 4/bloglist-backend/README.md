@@ -180,8 +180,9 @@ npm test -- -t "the_name_of_the_test"
 ```
 
 Run all of the tests that contain blogs in their name:
+```
 npm test -- -t 'blogs'
-
+```
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
