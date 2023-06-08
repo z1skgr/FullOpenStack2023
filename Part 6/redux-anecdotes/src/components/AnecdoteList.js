@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { vote } from '../reducers/anecdoteReducer'
 import * as _ from "lodash";
-
+import React from 'react'
 
 const Anecdote = ({ anecdote }) => {
   const dispatch = useDispatch()
@@ -21,8 +21,15 @@ const Anecdote = ({ anecdote }) => {
 }
 
 const AnecdoteList = () => {
-  
-  const anecdotes = useSelector(state => state)
+ 
+  const anecdotes = useSelector(({filter, anecdotes}) => {
+    if ( filter=== null ) {
+      return anecdotes
+    }
+    return anecdotes.filter((anecdote)=>{
+      return anecdote.content.toLowerCase().indexOf(filter.toLowerCase()) >=0;
+    })
+  })
 
   const orderedAnecdotes = _.sortBy(anecdotes, ["votes","content"])
 
