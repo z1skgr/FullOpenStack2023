@@ -8,13 +8,8 @@ const VisibilityFilter = () => {
     dispatch(filterChange(event.target.value))
 }
 
-const style = {
-  marginBottom: 10
-}
-
-
   return (
-    <div style={style}>filter <input name="filterAnecdote" onChange={handleFilter} /></div>
+    <div>filter <input name="filterAnecdote" onChange={handleFilter} /></div>
   )
 }
 
