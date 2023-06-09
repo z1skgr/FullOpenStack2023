@@ -27,8 +27,9 @@ const AnecdoteList = () => {
       return anecdotes
     }
     return anecdotes.filter((anecdote)=>{
-      console.log(filter)
-      return anecdote.content.toLowerCase().indexOf(filter.toString().toLowerCase()) >=0;
+      console.log(anecdote)
+      //const lowerString=anecdote.content.toString().toLowerCase()
+      return anecdote.content.toString().toLowerCase().indexOf(filter.toString().toLowerCase()) >=0;
     })
   })
 
