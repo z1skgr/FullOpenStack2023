@@ -36,15 +36,12 @@ const AnecdoteList = () => {
       return anecdotes
     }
     return anecdotes.filter((anecdote)=>{
-      console.log(anecdote)
-      //const lowerString=anecdote.content.toString().toLowerCase()
-      return anecdote.content.toString().toLowerCase().indexOf(filter.toString().toLowerCase()) >=0;
+    return anecdote.content.toString().toLowerCase().indexOf(filter.toString().toLowerCase()) >=0;
     })
   })
 
   const orderedAnecdotes = _.sortBy(anecdotes, ["votes","content"])
 
-  console.log(orderedAnecdotes)
   return(
     <ul>
       {
@@ -56,11 +53,7 @@ const AnecdoteList = () => {
           
         />
       )}
-
-
-
     </ul>
   )
 }
-
 export default AnecdoteList
