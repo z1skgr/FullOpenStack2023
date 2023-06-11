@@ -28,7 +28,6 @@ const create = async newObj => {
 const update = async(id, newObj) => {
   const request = await axios.put(`${ baseUrl }/${id}`, newObj)
   return request.data
-
 }
 
 const remove = async(id) => {
