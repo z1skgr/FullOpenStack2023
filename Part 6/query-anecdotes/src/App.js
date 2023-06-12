@@ -5,7 +5,15 @@ import { useMutation, useQueryClient } from 'react-query'
 import { getAnecdotes, updateAnecdote } from './request'
 import { useQuery } from 'react-query'
 
+import { useContext } from 'react';
+import Context from './context';
+
+
+
 const App = () => {
+
+  const [, msgDispatch] = useContext(Context);
+
   const queryClient = useQueryClient()
 
 
@@ -19,14 +27,13 @@ const App = () => {
   const handleVote = (anecdote) => {
     console.log('vote')
     updateAnecdoteMutation.mutate({...anecdote, votes: anecdote.votes+1 })
+    msgDispatch({type: 'SHOW', payload: `anecdote  ${anecdote.content} voted!`});
+          setTimeout(() => {
+            msgDispatch({type: 'HIDE'})
+        }, 5000);
   }
 
-/*  const addAnecdote = async (event) => {
-    event.preventDefault()
-    const content = event.target.anecdote.value
-    event.target.anecdote.value = ''
-    newAnecdoteMutation.mutate({ content, votes:0 })
-  } */
+
 
   const result = useQuery('anecdotes', getAnecdotes , {
     retry: false

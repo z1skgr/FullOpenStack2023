@@ -1,7 +1,11 @@
 import { useMutation, useQueryClient } from 'react-query'
 import { createAnecdote } from '../request'
 
+import { useContext } from 'react';
+import Context from '../context';
+
 const AnecdoteForm = () => {
+  const [, msgDispatch] = useContext(Context);
   const queryClient = useQueryClient()
 
   const onCreate = (event) => {
@@ -16,7 +20,18 @@ const newAnecdoteMutation = useMutation(createAnecdote, {
   onSuccess: (newAnecdote) => {
     const anecdotes = queryClient.getQueryData('anecdotes')
     queryClient.setQueryData('anecdotes', anecdotes.concat(newAnecdote))
+    msgDispatch({type: 'SHOW', payload: `${newAnecdote.content} added!`});
+          setTimeout(() => {
+            msgDispatch({type: 'HIDE'})
+          }, 5000);
   },
+  onError: () => {
+    msgDispatch({type: 'SHOW', payload: `too short anecdote, must have length 5 or more`});
+    setTimeout(() => {
+      msgDispatch({type: 'HIDE'})
+    }, 5000);
+  }
+  
 })
   const getId = () => (100000 * Math.random()).toFixed(0)
 
