@@ -9,21 +9,27 @@ import LoginForm from './components/LoginForm'
 import BlogForm from './components/BlogForm'
 
 import './index.css'
-import Message from './components/Message'
+import Notification from './components/Notification'
 import Togglable from './components/Togglable'
+import { showNotification } from './reducers/notificationReducer'
+
+import { useDispatch } from 'react-redux'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
   const [user, setUser] = useState(null)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [message, setMessage] = useState(null)
+
+
+  const dispatch = useDispatch()
 
   const handleLogout = async (event) => {
     event.preventDefault()
     window.localStorage.clear()
+
+    dispatch(showNotification(`User ${user.username} logged out`,5))
     setUser(null)
-    setMessage(null)
   }
 
   const blogFormRef = useRef()
@@ -40,15 +46,10 @@ const App = () => {
       setUser(user)
       setUsername('')
       setPassword('')
-      setMessage('Login approved')
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification('Login approved', 5))
+
     } catch (exception) {
-      setMessage('ERROR, Wrong username or password')
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification('ERROR, Wrong username or password', 5))
     }
   }
 
@@ -58,11 +59,6 @@ const App = () => {
     })
   }, [])
 
-  useEffect(() => {
-    blogService.getAll().then((blogs) => {
-      setBlogs(blogs)
-    })
-  }, [])
 
   const createBlog = async (newBlog) => {
     try {
@@ -70,30 +66,23 @@ const App = () => {
       blogFormRef.current.toggleVisibility()
       setBlogs(blogs.concat(postOne))
 
-      setMessage(`A new Blog ${newBlog.title} by ${newBlog.author}`)
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification(`A new Blog ${newBlog.title} by ${newBlog.author}`, 5))
+
     } catch (exception) {
-      setMessage(
-        `ERROR, Cannot add blog ${newBlog.title} ${exception.response.data.error}`
-      )
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification(
+        `ERROR, Cannot add blog ${newBlog.title} ${exception.response.data.error}`, 5
+      ))
     }
   }
 
   const updateBlog = async (id, updBlog) => {
     try {
       const response = await blogService.update(id, updBlog)
-      setMessage(`Update likes on blog ${updBlog.title}`)
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification(`Update likes on blog ${updBlog.title}`,5))
+
       setBlogs(blogs.map((blog) => (blog.id === response.id ? response : blog)))
     } catch (exception) {
-      setMessage('ERROR' + exception.response.data.error)
+      dispatch(showNotification('ERROR' + exception.response.data.error))
     }
   }
 
@@ -101,17 +90,12 @@ const App = () => {
     try {
       if (window.confirm(`Remove blog ${blog.title} by ${blog.author}`)) {
         await blogService.remove(blog.id)
-        setMessage(`${blog.title} Blog deleted`)
+        dispatch(showNotification(`${blog.title} Blog deleted`, 5))
         setBlogs(blogs.filter((b) => b.id !== blog.id))
-        setTimeout(() => {
-          setMessage(null)
-        }, 5000)
       }
     } catch (exception) {
-      setMessage('ERROR' + exception.response.data.error)
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
+      dispatch(showNotification('ERROR' + exception.response.data.error, 5))
+
     }
   }
 
@@ -119,7 +103,7 @@ const App = () => {
     <div>
       <h2>log in to application</h2>
 
-      <Message message={message} />
+      <Notification />
       {user === null ? null : (
         <p>
           <span className="active-user">{user.name}</span> logged in
