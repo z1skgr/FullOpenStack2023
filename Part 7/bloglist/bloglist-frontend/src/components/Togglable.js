@@ -1,39 +1,39 @@
+import React, { useState, useImperativeHandle } from 'react'
+import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { useState, forwardRef, useImperativeHandle } from 'react'
 
-const Togglable = forwardRef((props, refs) => {
+const Togglable = React.forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false)
 
-  const hideWhenVisible = { display: visible ? 'none' : '' }
-  const showWhenVisible = { display: visible ? '' : 'none' }
-
-  Togglable.displayName = 'Togglable'
+  const hideWhenVisible = { display: visible ? 'none' : '', paddingBottom: 5 }
+  const showWhenVisible = { display: visible ? '' : 'none', paddingBottom: 5 }
 
   const toggleVisibility = () => {
     setVisible(!visible)
   }
 
-  useImperativeHandle(refs, () => {
+  useImperativeHandle(ref, () => {
     return {
-      toggleVisibility,
+      toggleVisibility
     }
   })
 
   return (
     <div>
       <div style={hideWhenVisible}>
-        <button onClick={toggleVisibility}>{props.buttonLabel}</button>
+        <Button variant="primary" onClick={toggleVisibility}>{props.buttonLabel}</Button>
       </div>
       <div style={showWhenVisible}>
         {props.children}
-        <button onClick={toggleVisibility}>cancel</button>
+        <Button variant="danger" onClick={toggleVisibility}>cancel</Button>
       </div>
     </div>
   )
 })
 
+Togglable.displayName = 'Togglable'
 Togglable.propTypes = {
-  buttonLabel: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string.isRequired
 }
 
 export default Togglable

@@ -1,89 +1,63 @@
 import React from 'react'
-import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { createBlog } from '../reducers/blogReducer'
+import { setNotification } from '../reducers/notificationReducer'
+import { Form, Button } from 'react-bootstrap'
 
-const ΒlogForm = ({ createBlog }) => {
-  const [form, setForm] = useState({
-    author: '',
-    title: '',
-    url: '',
-    likes: 0,
-  })
+const BlogForm = () => {
+  const dispatch = useDispatch()
 
-  const handleAuthor = (event) => {
-    setForm({
-      ...form,
-      author: event.target.value,
-    })
-  }
-
-  const handleTitle = (event) => {
-    setForm({
-      ...form,
-      title: event.target.value,
-    })
-  }
-
-  const handleUrl = (event) => {
-    setForm({
-      ...form,
-      url: event.target.value,
-    })
-  }
-
-  const addBlog = (event) => {
+  const createNewBlog = async (event) => {
     event.preventDefault()
-    createBlog({
-      title: form.title,
-      author: form.author,
-      url: form.url,
-    })
-    setForm({
-      title: '',
-      author: '',
-      url: '',
-    })
+    const title = event.target.title.value
+    const author = event.target.author.value
+    const url = event.target.url.value
+
+    event.target.title.value = ''
+    event.target.author.value = ''
+    event.target.url.value = ''
+
+    const blogToCreate = {
+      title: title,
+      author: author,
+      url: url
+    }
+
+    dispatch(createBlog(blogToCreate))
+    dispatch(
+      setNotification(`Blog ${title} successfully created`, 'success', 5)
+    )
   }
 
   return (
-    <>
-      <form onSubmit={addBlog}>
-        <h2>create new</h2>
+    <Form onSubmit={createNewBlog}>
+      <Form.Group>
+        <Form.Label>Title:</Form.Label>
+        <Form.Control
+          type="text"
+          name="title"
+          id="title"
+        />
+        <Form.Label>Author:</Form.Label>
+        <Form.Control
+          type="text"
+          name="author"
+          id="author"
+        />
+        <Form.Label>Url:</Form.Label>
+        <Form.Control
+          type="text"
+          name="url"
+          id="url"
+        />
         <div>
-          Author
-          <input
-            id="author"
-            type="author"
-            value={form.author}
-            name="author"
-            onChange={handleAuthor}
-          />
+          <Button variant="primary" type="submit">
+          add
+          </Button>
         </div>
-        <div>
-          Title
-          <input
-            id="title"
-            type="title"
-            value={form.title}
-            name="title"
-            onChange={handleTitle}
-          />
-        </div>
-        <div>
-          Url
-          <input
-            id="url"
-            type="url"
-            value={form.url}
-            name="url"
-            onChange={handleUrl}
-          />
-        </div>
-        <button id="create-button" type="create">
-          create
-        </button>
-      </form>
-    </>
+      </Form.Group>
+    </Form>
   )
 }
 
-export default ΒlogForm
+export default BlogForm

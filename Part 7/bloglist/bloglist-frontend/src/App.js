@@ -1,159 +1,180 @@
-import { useState, useEffect, useRef } from 'react'
-import React from 'react'
-
-import Blog from './components/Blog'
-import blogService from './services/blogs'
-import loginService from './services/login'
-
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
+import Header from './components/Header'
+import UserList from './components/UserList'
 import LoginForm from './components/LoginForm'
+import Blog from './components/Blog'
+import BlogList from './components/BlogList'
 import BlogForm from './components/BlogForm'
-
-import './index.css'
-import Notification from './components/Notification'
 import Togglable from './components/Togglable'
-import { showNotification } from './reducers/notificationReducer'
-
-import { useDispatch } from 'react-redux'
+import Notification from './components/Notification'
+import { initializeBlogs, like, comment } from './reducers/blogReducer'
+import { initializeAllUsers } from './reducers/userReducer'
+import { initializeUser } from './reducers/authReducer'
+import { setNotification } from './reducers/notificationReducer'
+import { Table, Button } from 'react-bootstrap'
 
 const App = () => {
-  const [blogs, setBlogs] = useState([])
-  const [user, setUser] = useState(null)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
-
   const dispatch = useDispatch()
+  const user = useSelector((state) => state.user)
+  const users = useSelector((state) => state.users)
+  const blogs = useSelector((state) => state.blog)
 
-  const handleLogout = async (event) => {
-    event.preventDefault()
-    window.localStorage.clear()
-
-    dispatch(showNotification(`User ${user.username} logged out`,5))
-    setUser(null)
+  const margin = {
+    margin: 5
   }
 
-  const blogFormRef = useRef()
-
-  const handleLogin = async (event) => {
-    event.preventDefault()
-    try {
-      const user = await loginService.login({
-        username,
-        password,
-      })
-      window.localStorage.setItem('loggedBlogAppUser', JSON.stringify(user))
-      blogService.setToken(user.token)
-      setUser(user)
-      setUsername('')
-      setPassword('')
-      dispatch(showNotification('Login approved', 5))
-
-    } catch (exception) {
-      dispatch(showNotification('ERROR, Wrong username or password', 5))
-    }
-  }
+  const blogFormRef = React.createRef()
 
   useEffect(() => {
-    blogService.getAll().then((blogs) => {
-      setBlogs(blogs)
-    })
-  }, [])
+    dispatch(initializeUser())
+    dispatch(initializeBlogs())
+    dispatch(initializeAllUsers())
+  }, [dispatch])
 
+  const userMatch = useRouteMatch('/users/:id')
+  const foundUser = userMatch
+    ? users.find((user) => user.id === userMatch.params.id)
+    : null
 
-  const createBlog = async (newBlog) => {
-    try {
-      const postOne = await blogService.create(newBlog)
-      blogFormRef.current.toggleVisibility()
-      setBlogs(blogs.concat(postOne))
+  const blogMatch = useRouteMatch('/blogs/:id')
+  const foundBlog = blogMatch
+    ? blogs.find((blog) => blog.id === blogMatch.params.id)
+    : null
 
-      dispatch(showNotification(`A new Blog ${newBlog.title} by ${newBlog.author}`, 5))
-
-    } catch (exception) {
-      dispatch(showNotification(
-        `ERROR, Cannot add blog ${newBlog.title} ${exception.response.data.error}`, 5
-      ))
-    }
+  const handleLikes = (blogToLike) => {
+    dispatch(like(blogToLike))
+    dispatch(
+      setNotification(`Blog ${blogToLike.title} successfully updated`, 5)
+    )
   }
 
-  const updateBlog = async (id, updBlog) => {
-    try {
-      const response = await blogService.update(id, updBlog)
-      dispatch(showNotification(`Update likes on blog ${updBlog.title}`,5))
-
-      setBlogs(blogs.map((blog) => (blog.id === response.id ? response : blog)))
-    } catch (exception) {
-      dispatch(showNotification('ERROR' + exception.response.data.error))
-    }
-  }
-
-  const deleteBlog = async (blog) => {
-    try {
-      if (window.confirm(`Remove blog ${blog.title} by ${blog.author}`)) {
-        await blogService.remove(blog.id)
-        dispatch(showNotification(`${blog.title} Blog deleted`, 5))
-        setBlogs(blogs.filter((b) => b.id !== blog.id))
-      }
-    } catch (exception) {
-      dispatch(showNotification('ERROR' + exception.response.data.error, 5))
-
-    }
+  const handleComment = (event) => {
+    event.preventDefault()
+    const commentToAdd = event.target.comment.value
+    console.log('HANDLE COMMENT'+commentToAdd)
+    console.log(foundBlog)
+    event.target.comment.value = ''
+    dispatch(comment(foundBlog, commentToAdd))
   }
 
   return (
-    <div>
-      <h2>log in to application</h2>
-
-      <Notification />
-      {user === null ? null : (
-        <p>
-          <span className="active-user">{user.name}</span> logged in
-          <button onClick={handleLogout} type="submit">
-            logout
-          </button>
-        </p>
-      )}
-
-      {user === null ? (
-        <LoginForm
-          handleLogin={handleLogin}
-          username={username}
-          password={password}
-          setUsername={(e) => setUsername(e.target.value)}
-          setPassword={(e) => setPassword(e.target.value)}
-        />
-      ) : (
-        <div>
-          {' '}
-          <Togglable buttonLabel="new blog" blogs={blogs} ref={blogFormRef}>
-            <BlogForm createBlog={createBlog} />
-          </Togglable>
-          {
-            <div>
-              <table border="5">
-                <thead>
-                  <tr>
-                    <th>Title / Author</th>
-                    <th>URL</th>
-                    <th>Likes</th>
-                    <th>Delete</th>
-                  </tr>
-
-                  {blogs
-                    .sort((a, b) => a.likes - b.likes)
-                    .map((blog) => (
-                      <Blog
-                        key={blog.id}
-                        blog={blog}
-                        updatedBlog={updateBlog}
-                        deleteBlog={deleteBlog}
-                      />
-                    ))}
-                </thead>
-              </table>
+    <div className="container">
+      <Switch>
+        <Route path="/users/:id">
+          {user === null ? (
+            <div style={{
+              marginBottom: 10
+            }}>
+              <Notification />
+              <LoginForm />
             </div>
-          }
-        </div>
-      )}
+          ) : (
+            <div>
+              <Header />
+              <h2>Bloglist</h2>
+              <Notification />
+              <h3>{user.name}</h3>
+              <h4>Added blogs</h4>
+              {!foundUser ? (
+                null
+              ) : (
+                <Table striped>
+                  <tbody>
+                    {foundUser.blogs.map((blog) => <Blog key={blog.id} blog={blog} />)}
+                  </tbody>
+                </Table>
+              )}
+            </div>
+          )}
+        </Route>
+        <Route path="/blogs/:id">
+          {user === null ? (
+            <div>
+              <Notification />
+              <LoginForm />
+            </div>
+          ) : (
+            <div>
+              <Header />
+              <h2>Bloglist</h2>
+              <Notification />
+              {!foundBlog ? (
+                null
+              ) : (
+                <div>
+                  <h2>{foundBlog.title}</h2>
+                  <p>{foundBlog.url}</p>
+                  <p>
+                    {foundBlog.likes} likes {' '}
+                    <Button variant="primary" onClick={() => handleLikes(foundBlog)}>
+                          like
+                    </Button>
+                  </p>
+                  <p>added by {foundBlog.author}</p>
+                  <h3>comments</h3>
+                  <form onSubmit={handleComment}>
+                    <div>
+                      <input id="comment" type="text" name="comment" />
+                      <Button style={margin} variant="primary" id="comment-button" type="submit">
+                            add comment
+                      </Button>
+                    </div>
+                  </form>
+                  <ul>
+                    {
+                      foundBlog.comments.map((comment) => <li key={comment} >{comment}</li>)
+                    }
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+        </Route>
+        <Route path="/blogs">
+          {user === null ? (
+            <div>
+              <Notification />
+              <LoginForm />
+            </div>
+          ) : (
+            <div>
+              <Header />
+              <h2>Bloglist</h2>
+              <Notification />
+              <Togglable buttonLabel="Add new blog" ref={blogFormRef}>
+                <BlogForm />
+              </Togglable>
+              <Table striped>
+                <tbody>
+                  <BlogList />
+                </tbody>
+              </Table>
+            </div>
+          )}
+        </Route>
+        <Route path="/users">
+          {user === null ? (
+            <div>
+              <Notification />
+              <LoginForm />
+            </div>
+          ) : (
+            <div>
+              <Header />
+              <h2>Bloglist</h2>
+              <Notification />
+              <h2>Users</h2>
+              <UserList />
+            </div>
+          )}
+        </Route>
+        <Route path="/">
+          <Notification />
+          <LoginForm />
+        </Route>
+      </Switch>
     </div>
   )
 }

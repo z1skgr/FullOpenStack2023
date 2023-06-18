@@ -1,42 +1,38 @@
 import axios from 'axios'
-import jwt from 'jwt-decode'
 const baseUrl = '/api/blogs'
+
 let token = null
+let config
 
-const setToken = (newToken) => {
-  token = `Bearer ${newToken}`
-}
-
-const getUserId = () => {
-  return token ? jwt(token).id : false
-}
-
-const getAll = () => {
-  const request = axios.get(baseUrl)
-  return request.then((response) => response.data)
-}
-
-const create = async (newObj) => {
-  const config = {
-    headers: { Authorization: token },
+const setToken = newToken => {
+  token = `bearer ${newToken}`
+  config = {
+    headers: { Authorization: token }
   }
+}
 
-  const response = await axios.post(baseUrl, newObj, config)
+const getAll = async () => {
+  const response = await axios.get(baseUrl, config)
   return response.data
 }
 
-const update = async (id, newObj) => {
-  const request = await axios.put(`${baseUrl}/${id}`, newObj)
-  return request.data
+const create = async newObject => {
+  const response = await axios.post(baseUrl, newObject, config)
+  return response.data
 }
 
-const remove = async (id) => {
-  const config = {
-    headers: { Authorization: token },
-  }
-
-  const request = await axios.delete(`${baseUrl}/${id}`, config)
-  return request.data
+const update = async updateObject => {
+  const response = await axios.put(
+    `${baseUrl}/${updateObject.id}`,
+    updateObject,
+    config
+  )
+  return response.data
 }
 
-export default { getAll, create, update, setToken, remove, getUserId }
+const remove = async id => {
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+  return response.data
+}
+
+export default { getAll, create, update, setToken, remove }
