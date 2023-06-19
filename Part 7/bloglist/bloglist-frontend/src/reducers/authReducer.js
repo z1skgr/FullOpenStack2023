@@ -7,7 +7,7 @@ const authReducer = (state = null, action) => {
   console.log('action', action)
 
   switch (action.type) {
-  case 'INITIALIZE':
+  case 'INIT_USER':
     return action.user
   case 'LOGIN':
     return action.user
@@ -18,17 +18,16 @@ const authReducer = (state = null, action) => {
   }
 }
 
-export const initializeUser = () => {
-  const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
+export const initUser = () => {
+  const loggedUserJSON = window.localStorage.getItem('loggedBlogAppUser')
   if (loggedUserJSON) {
     const user = JSON.parse(loggedUserJSON)
     blogService.setToken(user.token)
     return {
-      type: 'INITIALIZE',
+      type: 'INIT_USER',
       user: user
     }
   }
-
   return {
     type: 'INITIALIZE',
     user: null
@@ -43,12 +42,12 @@ export const login = (username, password) => {
         password
       })
 
-      window.localStorage.setItem('loggedBlogappUser', JSON.stringify(user))
       blogService.setToken(user.token)
       dispatch({
         type: 'LOGIN',
         user: user
       })
+      window.localStorage.setItem('loggedBlogAppUser', JSON.stringify(user))
     } catch (exception) {
       dispatch(setNotification('Wrong Credentials','error', 5))
     }

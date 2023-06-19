@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux'
 
 const BlogList = () => {
   const blogs = useSelector((state) => state.blog)
-  const byLikes = (b1, b2) => b2.likes - b1.likes
-
-  return blogs.sort(byLikes).map((blog) => <Blog key={blog.id} blog={blog} />)
+  return blogs.sort((a,b) => a.likes - b.likes).map((blog) => <Blog key={blog.id} blog={blog} />)
 }
 
 export default BlogList

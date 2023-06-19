@@ -7,23 +7,24 @@ const Notification = () => {
 
   if (notification === null) {
     return null
+  } else {
+    if (notification.type === 'success') {
+      return (
+        <div>
+          <Alert variant="success">
+            {notification.message}
+          </Alert>
+        </div>)
+    } else {
+      return (
+        <div>
+          <Alert variant="warning">
+            {notification.message}
+          </Alert>
+        </div>)
+    }
   }
 
-  if (notification.type === 'success') {
-    return (
-      <div>
-        <Alert variant="success">
-          {notification.message}
-        </Alert>
-      </div>)
-  } else {
-    return (
-      <div>
-        <Alert variant="warning">
-          {notification.message}
-        </Alert>
-      </div>)
-  }
 }
 
 export default Notification

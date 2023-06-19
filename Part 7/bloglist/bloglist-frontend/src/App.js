@@ -1,19 +1,25 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
+
+
+import BlogList from './components/BlogList'
+import BlogForm from './components/BlogForm'
+import Togglable from './components/Togglable'
 import Header from './components/Header'
 import UserList from './components/UserList'
 import LoginForm from './components/LoginForm'
 import Blog from './components/Blog'
-import BlogList from './components/BlogList'
-import BlogForm from './components/BlogForm'
-import Togglable from './components/Togglable'
+
+
 import Notification from './components/Notification'
-import { initializeBlogs, like, comment } from './reducers/blogReducer'
-import { initializeAllUsers } from './reducers/userReducer'
-import { initializeUser } from './reducers/authReducer'
+
 import { setNotification } from './reducers/notificationReducer'
 import { Table, Button } from 'react-bootstrap'
+
+import { initBlogs, like, comment } from './reducers/blogReducer'
+import { initAllUsers } from './reducers/userReducer'
+import { initUser } from './reducers/authReducer'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -28,35 +34,32 @@ const App = () => {
   const blogFormRef = React.createRef()
 
   useEffect(() => {
-    dispatch(initializeUser())
-    dispatch(initializeBlogs())
-    dispatch(initializeAllUsers())
+    dispatch(initUser())
+    dispatch(initBlogs())
+    dispatch(initAllUsers())
   }, [dispatch])
 
-  const userMatch = useRouteMatch('/users/:id')
-  const foundUser = userMatch
-    ? users.find((user) => user.id === userMatch.params.id)
+  const blogMatch = useRouteMatch('/blogs/:id')
+  const foundBlog = blogMatch ? blogs.find((blog) => blog.id === blogMatch.params.id)
     : null
 
-  const blogMatch = useRouteMatch('/blogs/:id')
-  const foundBlog = blogMatch
-    ? blogs.find((blog) => blog.id === blogMatch.params.id)
+  const userMatch = useRouteMatch('/users/:id')
+  const foundUser = userMatch ? users.find((user) => user.id === userMatch.params.id)
     : null
 
   const handleLikes = (blogToLike) => {
     dispatch(like(blogToLike))
-    dispatch(
-      setNotification(`Blog ${blogToLike.title} successfully updated`, 5)
+    dispatch(setNotification(`Blog ${blogToLike.title} successfully updated`, 5)
     )
   }
 
   const handleComment = (event) => {
     event.preventDefault()
-    const commentToAdd = event.target.comment.value
-    console.log('HANDLE COMMENT'+commentToAdd)
-    console.log(foundBlog)
+    const commentAdd = event.target.comment.value
+    //console.log('HANDLE COMMENT'+commentToAdd)
+    //console.log(foundBlog)
     event.target.comment.value = ''
-    dispatch(comment(foundBlog, commentToAdd))
+    dispatch(comment(foundBlog, commentAdd))
   }
 
   return (
@@ -64,15 +67,14 @@ const App = () => {
       <Switch>
         <Route path="/users/:id">
           {user === null ? (
-            <div style={{
-              marginBottom: 10
-            }}>
-              <Notification />
+            <div>
               <LoginForm />
+              <Notification />
             </div>
           ) : (
             <div>
               <Header />
+
               <h2>Bloglist</h2>
               <Notification />
               <h3>{user.name}</h3>
@@ -99,7 +101,7 @@ const App = () => {
             <div>
               <Header />
               <h2>Bloglist</h2>
-              <Notification />
+
               {!foundBlog ? (
                 null
               ) : (
@@ -127,6 +129,7 @@ const App = () => {
                       foundBlog.comments.map((comment) => <li key={comment} >{comment}</li>)
                     }
                   </ul>
+                  <Notification />
                 </div>
               )}
             </div>
@@ -134,9 +137,10 @@ const App = () => {
         </Route>
         <Route path="/blogs">
           {user === null ? (
-            <div>
+            <div >
               <Notification />
               <LoginForm />
+
             </div>
           ) : (
             <div>
@@ -151,14 +155,16 @@ const App = () => {
                   <BlogList />
                 </tbody>
               </Table>
+
             </div>
           )}
         </Route>
         <Route path="/users">
           {user === null ? (
-            <div>
-              <Notification />
+            <div >
+
               <LoginForm />
+              <Notification />
             </div>
           ) : (
             <div>
@@ -167,6 +173,7 @@ const App = () => {
               <Notification />
               <h2>Users</h2>
               <UserList />
+
             </div>
           )}
         </Route>
