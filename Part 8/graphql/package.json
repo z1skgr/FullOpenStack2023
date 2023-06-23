@@ -1,6 +1,6 @@
 {
   "name": "graphql",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "main": "index.js",
   "module": "main.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "dependencies": {
     "@apollo/server": "^4.7.4",
     "esm": "^3.2.25",
+    "gql": "^1.1.2",
     "graphql": "^16.7.0"
   },
-  "devDependencies": {},
   "description": ""
 }
