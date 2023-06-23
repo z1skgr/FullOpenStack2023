@@ -131,6 +131,10 @@ const typeDefs = `
       author: String!
       genres: [String!]!
     ): Book
+    editAuthor(
+      name: String!
+      setBornTo: Int!
+    ): Author
   }
 `;
 
@@ -173,6 +177,17 @@ const resolvers = {
       const book = { ...args, id: uuid() }
       books = books.concat(book)
       return book
+    },
+    editAuthor: (root, args) => {
+      const foundAuthor = authors.find(author => author.name === args.name)
+      if (foundAuthor) {
+        const updatedAuthor = { ...foundAuthor, born: args.setBornTo }
+        authors = authors.map(author => author.name === args.name ? updatedAuthor : foundAuthor)
+        return updatedAuthor  
+      }
+      return null
+      
+
     }
   }
 
