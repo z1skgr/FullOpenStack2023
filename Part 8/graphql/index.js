@@ -4,6 +4,7 @@ const { v1: uuid } = require('uuid')
 const { GraphQLError } = require('graphql')
 
 
+
 let authors = [
   {
     name: 'Robert Martin',
@@ -121,7 +122,7 @@ const typeDefs = `
   type Author{
     name: String!
     id: ID!
-    born: Int 
+    born: Int
     bookCount: Int
   }   
   type Mutation {
