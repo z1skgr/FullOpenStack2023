@@ -5,14 +5,20 @@ import { EDIT_AUTHOR } from '../queries'
 import { useEffect } from 'react'
 
 const Authors = ({show, setError}) => {
-  const result = useQuery(ALL_AUTHORS)
+  const [name, setName] = useState()
+  const [born, setBorn] = useState("")
 
+  const result = useQuery(ALL_AUTHORS, {
+    onCompleted: data => setName(data.allAuthors[0].name)
+  })
+
+
+  
   const [editAuthor, res] = useMutation(EDIT_AUTHOR, {refetchQueries: [ 
     { query: ALL_AUTHORS } 
   ]});
 
-  const [name, setName] = useState("");
-  const [born, setBorn] = useState("");
+
 
   useEffect(() => {
     if (res.data && res.data.editAuthor === null) {
@@ -38,7 +44,7 @@ const Authors = ({show, setError}) => {
       variables: { name, setBornTo: parseInt(born) },
     });
 
-    setName("");
+    setName(name);
     setBorn("");
   };
 
@@ -49,7 +55,8 @@ const Authors = ({show, setError}) => {
   return (
     <div>
       <h2>authors</h2>
-      
+      {console.log(authors)}
+      {console.log(result.data.allAuthors[0])}
       <table>
         <tbody>
           <tr>
@@ -68,7 +75,13 @@ const Authors = ({show, setError}) => {
       </table>
       <h2>Set birthyear</h2>
       <form onSubmit={handleBirthyear}> 
-        <div> name <input value={name} onChange={({ target }) => setName(target.value)}/></div>
+        <div> name <select defaultValue={name} onChange={({ target }) => setName(target.value)}>
+            {authors.map((a,index) => (
+              <option value={a.name} key={index}>
+                {a.name}
+              </option>
+            ))}
+          </select></div> 
         <div> born <input value={born} onChange={({ target }) => setBorn(target.value)}/></div>
         <div><button type="submit">update author</button></div>
       </form>
