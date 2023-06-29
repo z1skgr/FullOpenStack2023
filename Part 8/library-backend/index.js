@@ -7,6 +7,8 @@ const Book  = require('./models/book')
 const Author = require('./models/author')
 require('dotenv').config()
 
+const { GraphQLError } = require('graphql')
+
 const MONGODB_URI = process.env.MONGODB_URI
 const PORT = process.env.PORT
 
@@ -117,26 +119,54 @@ const resolvers = {
 
       if (!author) {
         author = new Author({ name: args.author })
-        await author.save()
+        try{
+          await author.save()
+        }catch (error){
+          throw new GraphQLError('Saving user failed', {
+            extensions: {
+              code: 'BAD_USER_INPUT',
+              invalidArgs: args.name,
+              error
+            }
+          })
+        }
+        
       }
       const book = new Book({ ...args, author: author.id })
+      try{
+        await book.save()
+      }catch (error){
+        throw new GraphQLError('Saving book failed', {
+          extensions: {
+            code: 'BAD_USER_INPUT',
+            invalidArgs: args.name,
+            error
+          }
+        })
+      }
       
-      return book.save()
+      return book
     },
     editAuthor: async (root, args) => {
-      const author = await Author.findOne({ name: args.name })
-
       let updatedAuthor=null
-      if(author){
-        const filter = { name: args.name }
-        const update = { born: args.setBornTo }
+      const filter = { name: args.name }
+      const update = { born: args.setBornTo }
+       
+      try{
         updatedAuthor = await Author.findOneAndUpdate(
           filter, update, { new: true }
         )
-      }      
-
-      
-
+     }catch (error){
+        throw new GraphQLError('Edit year failed', {
+          extensions: {
+            code: 'BAD_USER_INPUT',
+            invalidArgs: args.name,
+            error
+          }
+        })
+      }
+        
+        
       return updatedAuthor
     }
   }

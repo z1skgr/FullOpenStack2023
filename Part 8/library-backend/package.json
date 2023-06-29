@@ -1,6 +1,6 @@
 {
   "name": "graphql",
-  "version": "0.8.13-14",
+  "version": "0.8.15",
   "main": "index.js",
   "module": "main.js",
   "scripts": {
