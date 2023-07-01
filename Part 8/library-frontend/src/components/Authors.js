@@ -19,7 +19,7 @@ const Authors = ({show, setError}) => {
     onError: (error) => {
     error.graphQLErrors > 0
       ? setError(error.graphQLErrors[0].message)
-      : setError(error.message);
+      : setError(error.message)
   },
 })
 
@@ -40,18 +40,18 @@ const Authors = ({show, setError}) => {
     return null
   }
 
-  const authors =  result.data.allAuthors || [];
+  const authors =  result.data.allAuthors || []
 
   const handleBirthyear = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     editAuthor({
       variables: { name, setBornTo: parseInt(born) },
-    });
+    })
 
-    setName(name);
-    setBorn("");
-  };
+    setName(name)
+    setBorn("")
+  }
 
 
 

@@ -8,7 +8,7 @@ import Notify from './components/Notify'
 
 const App = () => {
   const [page, setPage] = useState('authors')
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
