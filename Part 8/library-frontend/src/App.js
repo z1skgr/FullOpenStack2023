@@ -12,10 +12,10 @@ const App = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setErrorMessage(null);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [errorMessage]);
+      setErrorMessage(null)
+    }, 5000)
+    return () => clearTimeout(timer)
+  }, [errorMessage])
 
   return (
     <div>
