@@ -22,7 +22,7 @@ Courses developed for Web Development from Helsinki University focusing on build
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part7">Part 7</a><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207"><br>React router, custom hooks, styling app with CSS and webpack</td>
   </tr>
   <tr>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part8">Part 8</a><br>GraphQL</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part8">Part 8</a><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208"><br>GraphQL</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part9">Part 9</a><br>TypeScript</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part10">Part 10</a><br>React Native</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part11">Part 11</a><br>CI/CD</td>
@@ -175,6 +175,23 @@ React Router, CSS styles, Webpack configuration & Hook functions for React appli
 - [bloglist](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207/bloglist) - React query App anecdote
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207)
+
+## [GraphQL](https://fullstackopen.com/en/part8)
+
+1. [GraphQL-server](https://fullstackopen.com/en/part8/graph_ql_server)  
+2. [React and GraphQL](https://fullstackopen.com/en/part8/react_and_graph_ql)  
+3. [Database and User Administration](https://fullstackopen.com/en/part8/database_and_user_administration)
+4. [Login and Updating Cache](https://fullstackopen.com/en/part8/login_and_updating_the_cache)
+5. [Fragments and Subscriptions](https://fullstackopen.com/en/part8/fragments_and_subscriptions)
+
+
+GraphQL, Facebook's alternative to REST for communication between browser and server.
+
+
+- [library](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208) - React query App anecdote
+
+[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208)
+
 
 ## Exercises per part
 

@@ -51,7 +51,6 @@ const typeDefs = `
     favoriteGenre: String!
     id: ID!
   }
-
   type Token {
     value: String!
   }
@@ -62,7 +61,6 @@ const typeDefs = `
     allBooks(author: String, genre: String): [Book!]!
     me: User
   }
-
   type Book {
     title: String!
     published: Int!
@@ -70,7 +68,6 @@ const typeDefs = `
     id: ID!
     genres: [String!]!
   }
-
   type Author{
     name: String!
     id: ID!
@@ -139,7 +136,7 @@ const resolvers = {
     await Book.find({ author: root.id }).countDocuments()
   },
   Mutation: {
-    addBook: async (root, args) => {
+    addBook: async (root, args,context) => {
       let author = await Author.findOne({ name: args.author })
       const currentUser = context.currentUser
 
@@ -181,10 +178,11 @@ const resolvers = {
       
       return book
     },
-    editAuthor: async (root, args) => {
+    editAuthor: async (root, args, context) => {
       let updatedAuthor=null
       const filter = { name: args.name }
       const update = { born: args.setBornTo }
+      const currentUser = context.currentUser
 
 
       if (!currentUser) {
@@ -254,17 +252,20 @@ const server = new ApolloServer({
 
 startStandaloneServer(server, {
   listen: { port: PORT },
-  context: async ({ req, res }) => {
+  context: async ({ req }) => {
     const auth = req ? req.headers.authorization : null
-    if (auth && auth.toLowerCase().startsWith('Bearer ')) {
+    //console.log(auth)
+    //console.log(`Heei ${auth.toLowerCase().startsWith('Bearer ')}`)
+    if (auth && auth.startsWith('Bearer ')) {
       const decodedToken = jwt.verify(
         auth.substring(7), process.env.JWT_SECRET
       )
-      const currentUser = await User
-        .findById(decodedToken.id)
+      const currentUser = await User.findById(decodedToken.id)
+      /*console.log(currentUser) */
       return { currentUser }
     }
   }
+  
 }).then(({ url }) => {
   console.log(`Server ready at ${ url }`)
 })
