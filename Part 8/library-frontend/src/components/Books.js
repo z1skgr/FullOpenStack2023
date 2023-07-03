@@ -15,11 +15,11 @@ const Books = (props) => {
   }
 
   const books = result.data.allBooks || []
-
+  //{console.log(result.data)}
   return (
     <div>
       <h2>books</h2>
-      {console.log(result.data)}
+      
       <table>
         <tbody>
           <tr>

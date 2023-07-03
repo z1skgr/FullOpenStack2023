@@ -27,7 +27,7 @@ const Authors = ({show, setError}) => {
 
   useEffect(() => {
     if (res.data && res.data.editAuthor === null) {
-      setError('person not found')
+      setError('Author not found')
     }
   }, [res.data, setError])
 
@@ -55,13 +55,12 @@ const Authors = ({show, setError}) => {
 
 
 
-
+  //{console.log(authors)}
+  //{console.log(result.data.allAuthors[0])}
 
   return (
     <div>
       <h2>authors</h2>
-      {console.log(authors)}
-      {console.log(result.data.allAuthors[0])}
       <table>
         <tbody>
           <tr>
