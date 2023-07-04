@@ -2,6 +2,52 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The whole concept of this exercise is an introduction with query language [GraphQL](https://graphql.org). We bundle it with [database](https://www.mongodb.com) service and [apollo server](https://www.apollographql.com/docs/apollo-server/) which is the best tool to handle data from any source
+
+* [GraphQl](https://graphql.org/learn/) using [npm](npm install @apollo/server graphql)
+
+* [MongoDb](https://www.mongodb.com/docs/)
+
+## MongoDB
+To store our data  indefinitely, we exploit some data storage services. To fulfil the requirements of these project, we select [MongoDB](https://www.mongodb.com) as database provider due to his lower complexity compared to a relational database and more specifically [MongoDB Atlas](https://www.mongodb.com/atlas/database). Link [here](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#mongo-db) to follow guide.
+
+
+## Apollo server
+We use graph query API to handle data manipulation in backend which is migrated to mongodb services
+
+## Setup
+* Config `.env` file. 
+```
+MONGODB_URI={YOUR-MONGO-PWD}
+JWT_SECRET={YOUR-JWT-SECRET}
+PASSWORD={YOUR-PASSWORD}          
+PORT=4000 # All users have the same password, we focus here on GraphQL
+```
+* Start backend to load [apollo server](https://www.apollographql.com/docs/intro/platform) and [MongoDb](https://www.mongodb.com/docs/atlas/getting-started/)
+* Start frontend to interact with the App
+
+To start the application
+```
+# Install dependancies
+$ npm install
+
+# Start the application
+$ npm start
+``` 
+
+
+## Application
+Addresses for application. 
+
+Front End
+------------
+* http://localhost:3000
+------------
+GraphQL - Back End
+------------
+* http://localhost:4000
+------------
+
 ## Available Scripts
 
 In the project directory, you can run:
