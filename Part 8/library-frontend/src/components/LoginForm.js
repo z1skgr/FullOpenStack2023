@@ -6,6 +6,7 @@ const LoginForm = ({ show, setError, setToken, setPage }) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
+
   const [login, result] = useMutation(LOGIN, {
     onError: (error) => {
       setError(error.graphQLErrors[0].message)
@@ -17,7 +18,7 @@ const LoginForm = ({ show, setError, setToken, setPage }) => {
       const token = result.data.login.value;
       setToken(token)
       setPage("authors")
-      localStorage.setItem("library-user-token", token)
+      localStorage.setItem("user-token", token)
     }
   }, [result.data]); // eslint-disable-line
 

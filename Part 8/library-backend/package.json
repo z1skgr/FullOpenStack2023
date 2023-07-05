@@ -5,7 +5,8 @@
   "module": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev" : "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,8 @@
     "graphql": "^16.7.1",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.3.1",
-    "mongoose-unique-validator": "^4.0.0"
+    "mongoose-unique-validator": "^4.0.0",
+    "nodemon": "^2.0.22"
   },
   "description": ""
 }
