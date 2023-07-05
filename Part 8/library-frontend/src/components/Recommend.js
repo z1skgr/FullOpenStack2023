@@ -1,9 +1,29 @@
-import { useQuery } from "@apollo/client"
-import { USER, ALL_BOOKS } from "../queries"
+import { useQuery, useLazyQuery } from "@apollo/client"
+import { USER, ALL_BOOKS_BY_GENRE } from "../queries"
+import { useState, useEffect } from "react";
 
 const Recommend = (props) => {
   const user = useQuery(USER);
-  const books = useQuery(ALL_BOOKS)
+  const [getBooks, result] = useLazyQuery(ALL_BOOKS_BY_GENRE, {
+    fetchPolicy: "no-cache",
+  });
+  const [favoriteGenre, setFavoriteGenre] = useState(null);
+  const [books, setBooks] = useState([])
+ 
+
+  useEffect(() => {
+    if (user.data) {
+      setFavoriteGenre(user?.data?.me?.favoriteGenre);
+      getBooks({ variables: { genre: favoriteGenre } })
+    }
+  }, [user.data, favoriteGenre, getBooks])
+
+  useEffect(() => {
+    if (result.data) {
+      setBooks(result.data.allBooks)
+    }
+  }, [result])
+
 
   if (!props.show) {
     return null
@@ -46,7 +66,7 @@ const Recommend = (props) => {
       )
       : (
         <p>
-          No books have been added yet based on your favorite genre{" "}
+          No books on user's favorite genre{" "}
           <strong>{user.data.me.favoriteGenre}</strong>
         </p>
       )

@@ -1,27 +1,57 @@
 import React from 'react'
-import { useQuery } from "@apollo/client"
+import { useQuery, useLazyQuery } from "@apollo/client"
 import { ALL_BOOKS } from "../queries"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Books = (props) => {
   const result = useQuery(ALL_BOOKS)
-  const [genre, setGenre] = useState("all");
+  const [getBooksByGenre, genreResult] = useLazyQuery(ALL_BOOKS, {
+    fetchPolicy: "no-cache"
+  })
+  
+  const [genre, setGenre] = useState("all")
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    if (result.data) {
+      setBooks(result.data.allBooks)
+    }
+  }, [result.data])
+
+  useEffect(() => {
+    if (genreResult.data) {
+      setBooks(genreResult.data.allBooks)
+    }
+  }, [genreResult.data])
+
+  
+
 
   
   if (!props.show) {
     return null
   }
 
-  if (result.loading) {
+  if (result.loading || genreResult.loading) {
     return <div>loading...</div>
   }
 
+  const handleGenre = (genre) => {
+    setGenre(genre)
+    getBooksByGenre({ variables: { genre: genre } })
+
+    if (genre === "all") {
+      setBooks(allBooks)
+      return;
+    }
+  };
 
 
 
-  const books = result.data.allBooks || []
+  const { allBooks } = result.data;
+  
 
-  const genres = [...new Set(books.flatMap((book) => book.genres))];
+  const genres = [...new Set(allBooks.flatMap((b) => b.genres))].concat("all")
   return (
     <div>
       <h2>books</h2>
@@ -47,11 +77,10 @@ const Books = (props) => {
       </table>
       <div>
         {genres.map((genre) => (
-          <button key={genre} onClick={() => setGenre(genre)}>
+          <button key={genre} onClick={() => handleGenre(genre)}>
             {genre}
           </button>
         ))}
-        <button onClick={() => setGenre("all")}>all genres</button>
       </div>
     </div>
   )
