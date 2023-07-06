@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The whole concept of this exercise is an introduction with query language [GraphQL](https://graphql.org). We bundle it with [database](https://www.mongodb.com) service and [apollo server](https://www.apollographql.com/docs/apollo-server/) which is the best tool to handle data from any source
 
-* [GraphQl](https://graphql.org/learn/) using [npm](npm install @apollo/server graphql)
+* [GraphQl](https://graphql.org/learn/) using [npm](https://www.npmjs.com/package/@apollo/server)
 
 * [MongoDb](https://www.mongodb.com/docs/)
 
@@ -31,7 +31,7 @@ To start the application
 # Install dependancies
 $ npm install
 
-# Start the application
+# Start the application seperate for server and client 
 $ npm start
 ``` 
 
