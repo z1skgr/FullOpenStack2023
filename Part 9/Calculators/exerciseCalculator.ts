@@ -73,6 +73,7 @@ const calculateExercises = (dailyHours: number[], target: number): Result => {
     if (average < target * 0.8) return 1
     else if (average < target) return 2
     else if (average >= target) return 3
+    return 0
   }
 
   const getRatingDescription = (rating: number): string => {
@@ -84,7 +85,7 @@ const calculateExercises = (dailyHours: number[], target: number): Result => {
     
     if (rating === 3) 
       return "Great work! Keep up!"
-    
+    return "Rating out of range"
   }
 
   const rating = getRating(average, target)

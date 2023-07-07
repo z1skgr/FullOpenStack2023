@@ -1,3 +1,4 @@
+/*
 interface BMI {
   height: number
   weight: number
@@ -15,9 +16,9 @@ const parseBMIArguments = (args: string[]): BMI => {
   } else {
     throw new Error('Provided values were not numbers!')
   }
-}
+}*/
 
-const calculateBmi = (height: number, weight: number): String => {
+const calculateBmi = (height: number, weight: number): string => {
     const BMI = weight / (height / 100) ** 2
     console.log(`Height ${height} \nWeight ${weight}`)
     if (BMI < 16.0) {
@@ -41,9 +42,9 @@ const calculateBmi = (height: number, weight: number): String => {
     }
     
   }
-
+/*
   try {
-    const { height, weight } = parseBMIArguments(process.argv);
+    const { height, weight } = parseBMIArguments(process.argv)
     console.log(calculateBmi(height, weight))
   } catch (error: unknown) {
     let errorMessage = 'Error happened.'
@@ -52,3 +53,5 @@ const calculateBmi = (height: number, weight: number): String => {
     }
     console.log(errorMessage)
   }
+*/
+export default {calculateBmi};
