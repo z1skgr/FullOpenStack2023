@@ -1,2 +1,2 @@
 // ESM syntax is supported.
-export {}
+export {};

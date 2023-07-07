@@ -18,30 +18,30 @@ const parseBMIArguments = (args: string[]): BMI => {
   }
 }*/
 
-const calculateBmi = (height: number, weight: number): string => {
-    const BMI = weight / (height / 100) ** 2
-    console.log(`Height ${height} \nWeight ${weight}`)
-    if (BMI < 16.0) {
-      return "Underweight - Severe"
-    }else if(BMI < 16.9){
-      return "Underweight - Moderate"
-    }else if(BMI < 18.4){
-      return "Underweight - Mild"
-    }else if(BMI < 24.9){
-      return "Normal range"
-    }else if(BMI < 29.9){
-      return "Overweight"
-    }else if(BMI < 34.9){
-      return "Obese I"
-    }else if(BMI < 39.9){
-      return "Obese II"
-    }else if(BMI > 40){
-      return "Obese III"
-    }else{
-      return "False"
-    }
-    
+export const calculateBmi: any = (height: number, weight: number): string => {
+  const BMI = weight / (height / 100) ** 2;
+  console.log(`Height ${height} \nWeight ${weight}`);
+  if (BMI < 16.0) {
+    return "Underweight - Severe";
+  } else if (BMI < 16.9) {
+    return "Underweight - Moderate";
+  } else if (BMI < 18.4) {
+    return "Underweight - Mild";
+  } else if (BMI < 24.9) {
+    return "Normal range";
+  } else if (BMI < 29.9) {
+    return "Overweight";
+  } else if (BMI < 34.9) {
+    return "Obese I";
+  } else if (BMI < 39.9) {
+    return "Obese II";
+  } else if (BMI > 40) {
+    return "Obese III";
+  } else {
+    return "False";
   }
+
+}
 /*
   try {
     const { height, weight } = parseBMIArguments(process.argv)
@@ -54,4 +54,4 @@ const calculateBmi = (height: number, weight: number): string => {
     console.log(errorMessage)
   }
 */
-export default {calculateBmi};
+

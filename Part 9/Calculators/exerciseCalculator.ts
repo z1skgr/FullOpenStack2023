@@ -1,95 +1,89 @@
 interface Result {
-  periodLength: number
-  trainingDays: number
-  success: boolean
-  rating: number
-  ratingDescription: string  
-  target: number
-  average: number
+  periodLength: number;
+  trainingDays: number;
+  success: boolean;
+  rating: number;
+  ratingDescription: string;
+  target: number;
+  average: number;
 }
 
 interface Training {
-  dailyHours: Array<number> 
-  target: number
+  dailyHours: Array<number>;
+  target: number;
 }
 
-const parseTRAINArguments = (args: string[]): Training => {
+export const parseTRAINArguments = (target: number,  dailyHours: number[]): Training => {
   
-  if (args.length < 2) throw new Error('Not enough arguments')
-
-  const list = new Array<number>()
-
-  for(let i=2;i<args.length;i++){
-    if(isNaN(Number(args[i]))){
-      throw new Error('Provided values were not numbers!')
+  for(let i=0;i<dailyHours.length;i++){
+    if(isNaN(Number(dailyHours[i]))){
+      throw new Error('Provided values were not numbers!');
     }
-    if(i!=2)   
-      list.push(Number(args[i]))
+
   }
-  list.forEach((element,i) => {
-    console.log(`Working Days`)
+  console.log(`Working Days`);
+  dailyHours.forEach((element,i) => {
     switch(i % 7){
       case 0 :
-        console.log(`Monday: ${element}h`)
-        break
+        console.log(`Monday: ${element}h`);
+        break;
       case 1 :
-        console.log(`Tuesday: ${element}h`)
-        break
+        console.log(`Tuesday: ${element}h`);
+        break;
       case 2:
-        console.log(`Wednesday: ${element}h`)
-        break
+        console.log(`Wednesday: ${element}h`);
+        break;
       case 3:
-        console.log(`Thursday: ${element}h`)
-        break
+        console.log(`Thursday: ${element}h`);
+        break;
       case 4:
-        console.log(`Friday: ${element}h`)
-        break
+        console.log(`Friday: ${element}h`);
+        break;
       case 5: 
-        console.log(`Saturday: ${element}h`)
-        break
+        console.log(`Saturday: ${element}h`);
+        break;
       case 6:
-        console.log(`Sunday: ${element}h`)
-        break
-      default: console.log('error')
+        console.log(`Sunday: ${element}h`);
+        break;
+      default: console.log('error');
     }
 
-  })
+  });
   return {
-    dailyHours : list,
-    target : Number(args[2])
-  }
+    dailyHours : dailyHours,
+    target : target
+  };
 
 
-}
+};
 
-const calculateExercises = (dailyHours: number[], target: number): Result => {
-  const periodLength = dailyHours.length
-  const trainingDays = dailyHours.filter((dailyHours) => dailyHours > 0).length
+export const calculateExercises = (dailyHours: number[], target: number): Result => {
+  const periodLength = dailyHours.length;
+  const trainingDays = dailyHours.filter((dailyHours) => dailyHours > 0).length;
 
-  const average = dailyHours.reduce((prev, curr) => prev + curr) / dailyHours.length
-  const success = average >= target
-
+  const average = dailyHours.reduce((prev, curr) => prev + curr) / dailyHours.length;
+  const success = average >= target;
   const getRating = (average: number, target: number): number => {
-    if (average < target * 0.8) return 1
-    else if (average < target) return 2
-    else if (average >= target) return 3
-    return 0
-  }
+    if (average < target * 0.8) return 1;
+    else if (average < target) return 2;
+    else if (average >= target) return 3;
+    return 0;
+  };
 
   const getRatingDescription = (rating: number): string => {
     if (rating === 1) 
-      return "You need more practice. Don't give up!"
+      return "You need more practice. Don't give up!";
     
     if (rating === 2) 
-      return "Not bad but could be better!"
+      return "Not bad but could be better!";
     
     if (rating === 3) 
-      return "Great work! Keep up!"
-    return "Rating out of range"
-  }
+      return "Great work! Keep up!";
+    return "Rating out of range";
+  };
 
-  const rating = getRating(average, target)
-  const ratingDescription = getRatingDescription(rating)
+  const rating = getRating(average, target);
+  const ratingDescription = getRatingDescription(rating);
 
   return {
     periodLength,
@@ -99,18 +93,20 @@ const calculateExercises = (dailyHours: number[], target: number): Result => {
     ratingDescription,
     target,
     average,
-  }
-}
+  };
+};
 
+
+/*
 try {
-  const { dailyHours, target } = parseTRAINArguments(process.argv)
-  console.log(calculateExercises(dailyHours, target))
+  const { dailyHours, target } = parseTRAINArguments(process.argv);
+  console.log(calculateExercises(dailyHours, target));
 }catch (error: unknown) {
-  let errorMessage = 'Error happened.'
+  let errorMessage = 'Error happened.';
   if (error instanceof Error) {
-    errorMessage += ' Error: ' + error.message
+    errorMessage += ' Error: ' + error.message;
   }
-  console.log(errorMessage)
+  console.log(errorMessage);
 }
-
+*/
 
