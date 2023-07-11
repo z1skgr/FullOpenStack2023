@@ -1,6 +1,6 @@
 {
   "name": "front-new",
-  "version": "0.9.8-9",
+  "version": "0.9.10-11",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
