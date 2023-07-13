@@ -24,12 +24,14 @@ function App() {
       visibility: visibility,
       weather: weather,
       comment: comment
-    })
-    setMessage(`Successfully added diary`)
-    setDate('')
-    setVisibility('')
-    setWeather('')
-    setComments('')
+    }, setMessage).then(data => {
+      if(data) {
+        setDate('')
+        setVisibility('')
+        setWeather('')
+        setComments('')
+      }
+    }).catch(error => setMessage('Error: ' + error.message))
   }
 
   useEffect(() => {
@@ -38,6 +40,8 @@ function App() {
     }, 5000)
     return () => clearTimeout(timer)
   }, [Message])
+
+  
 
   useEffect(() => { 
     diary.getDiaries().then(data => setDiaries(data))}, []);
