@@ -2,6 +2,74 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+The concept of exercise touches different themes
+* [React router](https://reactrouter.com/en/main). 
+* [CSS styles](https://fullstackopen.com/en/part7/more_about_styles) trends to React applications. 
+* [Webpack](https://webpack.js.org/) configuration 
+* [Hook functions](https://legacy.reactjs.org/docs/hooks-reference.html) & custom hook.
+
+## Setup
+### Anecdotes
+* Clone repository from [anencdotes](https://github.com/fullstack-hy2020/routed-anecdotes) 
+
+On terminal
+```
+npm install
+npm install react-router-dom
+npm start
+```
+
+### Country
+* Clone repository from [country](https://github.com/fullstack-hy2020/country-hook)
+On terminal
+```
+npm install
+npm start
+```
+
+
+### Ultimate Hook
+* Clone repository from [country](https://github.com/fullstack-hy2020/ultimate-hooks)
+On duplicate tab
+```
+npm run server
+```
+
+On terminal
+```
+npm install
+npm start
+```
+
+### Bloglist
+* Clone repository from base point solution of the course
+* Clone repository from [part 5](https://github.com/fullstack-hy2020/ultimate-hooks)
+
+On tab with backend path
+```
+npm start
+```
+
+On terminal with frontend path`
+```
+npm install
+npm start
+```
+
+Some style packages for bloglist
+```
+npm install react-bootstrap
+npm install @mui/material @emotion/react @emotion/styled
+npm install styled-components
+```
+
+
+### Package
+The packages are not modified in relation to [chapter 5](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%205) to run application
+
+
 ## Available Scripts
 
 In the project directory, you can run:
