@@ -1,6 +1,6 @@
 {
   "name": "front-new",
-  "version": "0.9.21",
+  "version": "0.9.23-24",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
