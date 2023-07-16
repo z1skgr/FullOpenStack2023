@@ -23,7 +23,7 @@ Courses developed for Web Development from Helsinki University focusing on build
   </tr>
   <tr>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part8">Part 8</a><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208"><br>GraphQL</td>
-    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part9">Part 9</a><br>TypeScript</td>
+    <td class="tg-0pky"><a href="https://fullstackopen.com/en/part9">Part 9</a><a href="https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209"><br>TypeScript</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part10">Part 10</a><br>React Native</td>
     <td class="tg-0pky"><a href="https://fullstackopen.com/en/part11">Part 11</a><br>CI/CD</td>
   </tr>
@@ -184,13 +184,22 @@ React Router, CSS styles, Webpack configuration & Hook functions for React appli
 4. [Login and Updating Cache](https://fullstackopen.com/en/part8/login_and_updating_the_cache)
 5. [Fragments and Subscriptions](https://fullstackopen.com/en/part8/fragments_and_subscriptions)
 
+## [TypeScript](https://fullstackopen.com/en/part9)
 
-GraphQL, Facebook's alternative to REST for communication between browser and server.
+1. [Background and Introduction](https://fullstackopen.com/en/part9/background_and_introduction)  
+2. [First steps with TypeScript](https://fullstackopen.com/en/part9/first_steps_with_type_script)  
+3. [Typing an Express App](https://fullstackopen.com/en/part9/typing_an_express_app)
+4. [React with types](https://fullstackopen.com/en/part9/react_with_types)
+5. [Grande finale: Patientor](https://fullstackopen.com/en/part9/grande_finale_patientor)
 
+Typescript, JavaScript open-source superset.
 
-- [library](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208) - Library App 
+- [Calculators](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/Calculators)
+- [CourseInfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/CourseInfo) 
+- [Ilari's diary](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/Ilari%20diary) 
+- [Patientor](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/Patientor)  
 
-[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%208)
+[Solutions](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209)
 
 
 ## Exercises per part
