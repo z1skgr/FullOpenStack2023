@@ -1,4 +1,8 @@
-import { NewPatient, Gender } from './types';
+import { NewPatient, Gender, Entry  } from './types';
+
+const isArray = (array: unknown): boolean => {
+  return Array.isArray(array) || array instanceof Array; 
+};
 
 const isString = (text: unknown): text is string => {
   return typeof text === 'string' || text instanceof String;
@@ -34,6 +38,16 @@ const parseGender= (gender: unknown): Gender => {
   return gender;
 };
 
+const parseEntries = (entries: any): Entry[] => {
+  if(!isArray(entries) || !entries) {
+      throw new Error('Incorrect of missing entries ');
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return entries;   
+};
+
+
+
 
 
 const toNewPatientEntry = (object: unknown): NewPatient => {
@@ -41,14 +55,15 @@ const toNewPatientEntry = (object: unknown): NewPatient => {
         throw new Error('Incorrect or missing data');
       }
     
-      if ('name' in object && 'dateOfBirth' in object && 'ssn' in object && 'gender' in object && 'occupation' in object)  {
+      if ('name' in object && 'dateOfBirth' in object && 'ssn' in object && 'gender' in object && 'occupation' in object &&
+      'entries' in object)  {
         const newEntry: NewPatient = {
           name: parseString(object.name),
           dateOfBirth: parseDate(object.dateOfBirth),
           ssn: parseString(object.ssn),
           gender: parseGender(object.gender),
           occupation: parseString(object.occupation),
-          entries: []
+          entries: parseEntries(object.entries)
         };
       
         return newEntry;

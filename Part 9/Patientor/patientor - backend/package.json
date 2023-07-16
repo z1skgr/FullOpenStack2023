@@ -1,6 +1,6 @@
 {
   "name": "patientor---backend",
-  "version": "0.9.20",
+  "version": "0.9.22",
   "description": "",
   "main": "index.ts",
   "module": "main.ts",

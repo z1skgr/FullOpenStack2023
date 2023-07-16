@@ -8,14 +8,10 @@ import patientService from "./services/patients";
 import PatientListPage from "./components/PatientListPage";
 import PatientDetail from "./components/PatientDetails";
 
-import { useParams } from "react-router-dom";
-
 const App = () => {
   const [patients, setPatients] = useState<Patient[]>([]);
-  const { id } = useParams();
 
   useEffect(() => {
-
     const fetchPatientList = async () => {
       const patients = await patientService.getAll();
       setPatients(patients);
@@ -36,7 +32,7 @@ const App = () => {
           <Divider hidden />
           <Routes>
             <Route path="/" element={<PatientListPage patients={patients} setPatients={setPatients} />} />
-            <Route path="/patients/:id" element={<PatientDetail pt={patients.find(v => v.id===id)}/>}/>
+            <Route path="/patients/:id" element={<PatientDetail />}/>
           </Routes>
         </Container>
       </Router>
