@@ -5,14 +5,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory
+In the project directory, you can run:
 
-```bash
-# Head to the desired exercise (cd unicafe or cd anecdotes cd courseinfo)
-
-```
-
-you can run:
+### `npm install`
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
 
 ### `npm start`
 

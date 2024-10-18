@@ -12,3 +12,28 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 
 ### [anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/anecdotes)
 * [1.12 - 1.14](https://fullstackopen.com/en/part1/a_more_complex_state_debugging_react_apps#exercises-1-6-1-14)
+
+
+##  Installation & Setup 
+
+For the project directory
+
+```bash
+# Head to the desired exercise (
+# $ cd unicafe //or 
+# $ cd anecdotes //or
+# $ cd courseinfo
+#)
+
+```
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Runs project instruction for start and testing
+* [anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/anecdotes)
+* [courseinfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/courseinfo)
+* [unicafe](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%201/unicafe)
+

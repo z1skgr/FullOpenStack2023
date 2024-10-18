@@ -24,7 +24,7 @@ app.use(
 )
 
 
-app.get('/', (request, response) => {
+app.get('/api', (request, response) => {
   response.send('<h1>Hello Exercise 3.19-22!</h1>')
 })
 

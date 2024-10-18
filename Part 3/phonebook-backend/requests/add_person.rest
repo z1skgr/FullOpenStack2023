@@ -3,7 +3,7 @@ content-type: application/json
 
 {
     "name": "Christos Ziskas",
-    "number": "6979305332"
+    "number": "697-057081"
 }
 
 ###
@@ -12,7 +12,7 @@ content-type: application/json
 
 {
     "name": "Maria Manarwlh",
-    "number": "6970570840"
+    "number": "697-057084"
 }
 
 ###
@@ -21,7 +21,7 @@ content-type: application/json
 
 {
     "name": "Panagiotis",
-    "number": "6945849093"
+    "number": "694-849093"
 }
 
 ###
@@ -30,5 +30,5 @@ content-type: application/json
 
 {
     "name": "Bak",
-    "number": "6948512128"
+    "number": "694-111218"
 }

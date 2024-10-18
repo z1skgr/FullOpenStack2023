@@ -69,7 +69,6 @@ Some other free options hosting options that work well
 
 * [CodeSandBox](https://codesandbox.io)
 
-
 There is guide for deploying application on [fly.io](https://fullstackopen.com/en/part3/deploying_app_to_internet#application-to-the-internet) (default provider of [FullStackOpen](https://fullstackopen.com/en/)).
 In our implementation, we decide to go with [Railway](https://railway.app) as our hosting tool. [Here](https://docs.railway.app/develop/projects), you can start exploring Railway.
 
@@ -108,12 +107,11 @@ invalid HTTP call [post](https://github.com/z1skgr/FullOpenStack2023/tree/main/P
 
 ------------
 * 3.15 - 18
-HTTP call [delete](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook/requests)
 
+HTTP call [delete](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook/requests) 
 [http://localhost:3001/api/persons/id](http://localhost:3001/api/persons/642333558c9b82b26e52ea8f) \
 
 invalid HTTP [call](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%203/phonebook/requests)
-
 [http://localhost:3001/api/persons/12345](http://localhost:3001/api/persons/12345)
 
 * 3.22
@@ -121,7 +119,38 @@ invalid HTTP [call](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%2
 
 ------------
 
+### .env
+To store our saved notes indefinitely, we need a database. 
 
+Create the `.env` file in the root of your directory and place URI:
+
+For more information check [Saving data on MongoDB](https://fullstackopen.com/en/part3/saving_data_to_mongo_db)
+
+* Create Project Database (shared Free tier)
+* Select Cloud Provider (Free tier)
+* Authenticate with username and password
+* Wait till cluster to be ready
+* Press 'Connect'
+* Copy connection string to your `env`
+
+
+The address looks like 
+`mongodb+srv://cziskas:thepasswordishere@cluster0.o1opl.mongodb.net/?retryWrites=true&w=majority `
+
+Your `.env` file should be like this
+```
+
+MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.1ncz1v3.mongodb.net/"
+PORT=3001
+
+```
+
+
+## Frontend
+In `phonebook-frontend` 
+
+* Run `npm build` 
+* Transfer `build` folder to `phonebook-backend`
 
 ## Available Scripts
 

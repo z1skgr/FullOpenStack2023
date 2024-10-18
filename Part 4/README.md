@@ -15,4 +15,30 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 [https://fullopenstack2023-part4-production.up.railway.app](https://fullopenstack2023-part4-production.up.railway.app)
 
 
+###  Installation & Setup 
+
+For the project directory
+
+```bash
+# Head to the desired exercise (
+# $ cd phonebook-backend 
+#)
+
+```
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Run terminals for server side and run tests
+* [phonebook-backend](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%204/phonebook-backend)
+
+
+
+
+
+
+
+
 

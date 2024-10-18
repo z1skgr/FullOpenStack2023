@@ -17,3 +17,28 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 * [2.18 - 2.20](https://fullstackopen.com/en/part2/adding_styles_to_react_app#exercises-2-18-2-20)
 
 
+##  Installation & Setup 
+
+For the project directory
+
+```bash
+# Head to the desired exercise (
+# $ cd countries //or 
+# $ cd courseinfo //or
+# $ cd phonebook
+#)
+
+```
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Runs project instruction for start and testing
+* [countries](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/countries)
+* [courseinfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/courseinfo)
+* [phonebook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%202/phonebook)
+
+
+
