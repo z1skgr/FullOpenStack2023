@@ -10,52 +10,6 @@ The concept of exercise touches different themes
 * [Hook functions](https://legacy.reactjs.org/docs/hooks-reference.html) & custom hook.
 
 ## Setup
-### Anecdotes
-* Clone repository from [anencdotes](https://github.com/fullstack-hy2020/routed-anecdotes) 
-
-On terminal
-```
-npm install
-npm install react-router-dom
-npm start
-```
-
-### Country
-* Clone repository from [country](https://github.com/fullstack-hy2020/country-hook)
-On terminal
-```
-npm install
-npm start
-```
-
-
-### Ultimate Hook
-* Clone repository from [country](https://github.com/fullstack-hy2020/ultimate-hooks)
-On duplicate tab
-```
-npm run server
-```
-
-On terminal
-```
-npm install
-npm start
-```
-
-### Bloglist
-* Clone repository from base point solution of the course
-* Clone repository from [part 5](https://github.com/fullstack-hy2020/ultimate-hooks)
-
-On tab with backend path
-```
-npm start
-```
-
-On terminal with frontend path`
-```
-npm install
-npm start
-```
 
 Some style packages for bloglist
 ```
