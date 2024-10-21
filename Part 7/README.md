@@ -16,3 +16,30 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 #### bloglist
 * [7.9-7.21](https://fullstackopen.com/en/part7/exercises_extending_the_bloglist#exercises-7-9-7-21)
 
+
+###  Installation & Setup 
+
+For the project directory
+
+```bash
+# Head to the desired exercise (
+# $ cd bloglist 
+# $ cd country-hook
+# $ cd routed-anecdotes
+# $ cd ultimate-hooks
+#)
+
+```
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Run terminals for server side and run tests
+* [bloglist](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207/bloglist)
+* [country-hook](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207/country-hook)
+* [routed-anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207/routed-anecdotes)
+* [ultimate-hooks](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%207/ultimate-hooks)
+
+

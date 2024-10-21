@@ -19,3 +19,17 @@ Numerous commits corresponding to each exercise. Folders contain final solutions
 ### anecdote-react-query
 * [6.20-6.22](https://fullstackopen.com/en/part6/react_query_use_reducer_and_the_context#exercises-6-20-6-22)
 * [6.23-6.24](https://fullstackopen.com/en/part6/react_query_use_reducer_and_the_context#exercises-6-23-6-24)
+
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Run terminals for server side and run tests
+* [query-anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%206/query-anecdotes)
+* [redux-anecdotes](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%206/redux-anecdotes)
+* [unicafe-redux](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%206/unicafe-redux)
+
+
+

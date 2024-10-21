@@ -29,4 +29,29 @@ Contains exercises related frontend development using TypeScript and React frame
 * [9.16-9.19](https://fullstackopen.com/en/part9/react_with_types#exercises-9-16-9-19)
 
 
+###  Installation & Setup 
+
+For the project directory
+
+```bash
+# Head to the desired exercise (
+# $ cd Calculators 
+# $ cd CourseInfo
+# $ cd "Ilary diary"
+# $ cd Patientor
+#)
+
+```
+
+1. Installation: `npm install`
+
+Ensure that your package.json file is included in your project directory. This file contains metadata about the project and lists its dependencies.
+Install all the dependencies listed in your `package.json` file.
+
+Run terminals for server side and run tests
+* [Calculators](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/Calculators)
+* [CourseInfo](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/courseinfo)
+* [Ilary diary](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/Ilari%20diary)
+* [Patientor](https://github.com/z1skgr/FullOpenStack2023/tree/main/Part%209/library-frontend)
+
 

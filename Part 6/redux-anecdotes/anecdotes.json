@@ -3,7 +3,7 @@
     {
       "content": "If it hurts, do it more often",
       "id": "47145",
-      "votes": 2
+      "votes": 3
     },
     {
       "content": "The first 90 percent of the code accounts for the first 10 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
@@ -18,16 +18,16 @@
     {
       "content": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "id": "98312",
-      "votes": 6
+      "votes": 9
     },
     {
       "content": "Black Man",
-      "votes": 7,
+      "votes": 9,
       "id": "45002"
     },
     {
       "content": "Bleed",
-      "votes": 1,
+      "votes": 4,
       "id": "53416"
     },
     {
@@ -37,8 +37,33 @@
     },
     {
       "content": "Fighting with my demons",
-      "votes": 8,
+      "votes": 11,
       "id": "14656"
+    },
+    {
+      "content": "",
+      "votes": 0,
+      "id": "88215"
+    },
+    {
+      "content": "",
+      "votes": 9,
+      "id": "83369"
+    },
+    {
+      "content": "",
+      "votes": 3,
+      "id": "66135"
+    },
+    {
+      "content": "",
+      "votes": 3,
+      "id": "69224"
+    },
+    {
+      "content": "I am the new one",
+      "votes": 8,
+      "id": "18658"
     }
   ]
 }

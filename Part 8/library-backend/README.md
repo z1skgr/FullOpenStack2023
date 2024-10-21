@@ -1,111 +1,33 @@
-# Getting Started with init
+# Getting Started with Create React App
 
-
-This project was bootstrapped with [git clone](https://www.git-scm.com/docs/git-clone).
-
-[unicafe-redux simplified](https://github.com/fullstack-hy2020/unicafe-redux) 
-
-[redux-anecdotes simplified](https://github.com/fullstack-hy2020/redux-anecdotes) 
-
-[query-anecdotes simplified](https://github.com/fullstack-hy2020/query-anecdotes)
-
-The whole concept of this exercise is implement application focusing on managing states using React libraries (Redux and React Query). 
-
-* [Flux](https://opensource.fb.com/) architecture for state management of React apps.
-* [Redux](https://redux.js.org/) works with the same principle as FLUX but with ease.
-* [React Query](https://react-query-v3.tanstack.com/)library to store and manage data retrieved from the server.
-* [json-server](https://fullstackopen.com/en/part2/getting_data_from_server) communicates wuth data for transaction with backend
-
-For more details, read Redux docs [page](https://redux.js.org/introduction/why-rtk-is-redux-today)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Setup
+* Config `.env` file. 
 
 
-* [Redux](https://react-redux.js.org/)
-* [Redux thunk](https://github.com/reduxjs/redux-thunk)
-* [React Query](https://tanstack.com/query/v3/)
 
-
-On terminal
+To start the application
 ```
-npm install
-npm install redux
-npm install react-redux
-npm install @reduxjs/toolkit
-npm install json-server --save-dev
-npm install axios
-npm install react-query
-npm start
+# Install dependancies
+$ npm install
 
-```
-On separate terminal
-```
-npm run server
-```
-
-For tests
-```
-npm install --save-dev deep-freeze
-```
-
-
-
-### Package
-Inside `package.json`, add to `scripts`
-* "server": "json-server -p3001 --watch db.json",
-  
-
-
-
-
-
-
-## Backend
-
-Addresses for each application. Guide for [REST client VS](https://coderethinked.com/rest-client-for-visual-studio-2022/)
-
-------------
-* http://localhost:3001/anecdotes
-* http://localhost:3000
-------------
-
-## Test
-------------
-* No test for this module
-------------
+# Start the application seperate for server and client 
+$ npm start
+``` 
 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run server`
-Runs the json-server in the development mode.
+### `npm start`
 
-Open [http://localhost:3001/anecdotes](http://localhost:3001/anecdotes) to backend in your browser.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-
-### `npm start`
-
-Runs the app in the development mode.
-
-Open [http://localhost:3000](http://localhost:3000) to frontend  in your browser.
-
-
-
-
-### `npm run dev`
-
-Runs the server in the development mode.\
-
-Open [http://localhost:3001/anecdotes](http://localhost:3001/anecdotes) to view frontend in your browser. If you have an opened tab, you can refresh the page.
-
-Open [http://localhost:3000](http://localhost:3000) to view backend in your browser. If you have an opened tab, you can refresh the page.
-
-
 
 ### `npm test`
 
@@ -161,6 +83,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-

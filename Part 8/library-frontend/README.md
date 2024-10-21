@@ -36,6 +36,21 @@ $ npm start
 ``` 
 
 
+### Test Application
+* To login as user, execute mutation on [localhost](http://localhost:4000)
+mutation {
+createUser (
+    username: "mluukkai2"
+    favoriteGenre: "database"
+  ) {
+    username
+    favoriteGenre
+    id
+  }
+}
+* On frontend, login with username (above example mluukai2) and the hardcoded password given on `.env` file 
+* Start to play with the UI to make new books and check functionality
+
 ## Application
 Addresses for application. 
 
