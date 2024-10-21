@@ -20,14 +20,15 @@ On browser, add route parameters height, weight
 ```
 http://localhost:3003/bmi?height=180&weight=72
 ``
-On [https://reqbin.com/](https://reqbin.com/) check api with content
+
+
 ```
+
+On [https://reqbin.com/](https://reqbin.com/) check api with content
 {
   "daily_exercises": [1, 0, 2, 0, 3, 0, 2.5],
   "target": 2.5
 }
-```
-
 
 
 ## Available Scripts
